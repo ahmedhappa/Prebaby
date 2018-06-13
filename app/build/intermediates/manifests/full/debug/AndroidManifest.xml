@@ -30,6 +30,11 @@
         <activity
             android:name="com.usama.salamtek.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name="com.usama.salamtek.SplachActivity" />
 
@@ -39,11 +44,6 @@
 
         <activity android:name="com.usama.salamtek.FirstActivity" />
         <activity android:name="com.usama.salamtek.LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.usama.salamtek.RegistrationActivity" />
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" >

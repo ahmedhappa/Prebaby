@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.usama.salamtek">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-sdk tools:overrideLibrary="com.github.sundeepk.compactcalendarview" />
 
@@ -17,6 +17,10 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".SplachActivity" />
 
@@ -25,13 +29,10 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".FirstActivity" />
-        <activity android:name=".LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".LoginActivity">
+
         </activity>
-        <activity android:name=".RegistrationActivity"/>
+        <activity android:name=".RegistrationActivity" />
         <activity android:name=".Tabs.TabsActivity">
 
         </activity>

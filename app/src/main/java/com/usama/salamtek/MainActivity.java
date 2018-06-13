@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.usama.salamtek.Tabs.HomeFragment;
+import com.usama.salamtek.Tabs.MoreFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,7 +29,7 @@ import java.util.TimeZone;
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
-///
+    ///
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy", /*Locale.getDefault()*/Locale.ENGLISH);
 
     private CompactCalendarView compactCalendarView;
@@ -43,42 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //setTitle("CompactCalendarViewToolbar");
-        appBarLayout = findViewById(R.id.app_bar_layout);
 
-        // Set up the CompactCalendarView
-        compactCalendarView = findViewById(R.id.compactcalendar_view);
-
-        // Force English
-        compactCalendarView.setLocale(TimeZone.getDefault(), /*Locale.getDefault()*/Locale.ENGLISH);
-
-        compactCalendarView.setShouldDrawDaysHeader(true);
-
-        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
-            @Override
-            public void onDayClick(Date dateClicked) {
-                setSubtitle(dateFormat.format(dateClicked));
-            }
-
-            @Override
-            public void onMonthScroll(Date firstDayOfNewMonth) {
-                setSubtitle(dateFormat.format(firstDayOfNewMonth));
-            }
-        });
-
-        // Set current date to today
-        setCurrentDate(new Date());
-
-        final ImageView arrow = findViewById(R.id.date_picker_arrow);
-
-        RelativeLayout datePickerButton = findViewById(R.id.date_picker_button);
-
-        datePickerButton.setOnClickListener(v -> {
-            float rotation = isExpanded ? 0 : 180;
-            ViewCompat.animate(arrow).rotation(rotation).start();
-
-            isExpanded = !isExpanded;
-            appBarLayout.setExpanded(isExpanded, true);
-        });
         tabLayout = (TabLayout) findViewById(R.id.tabslayout);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -88,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
+                    fragmentTransaction.commit();
+
+                }
+                if (tab.getText().toString().equals(getString(R.string.more))) {
+                    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.tabFrame, new MoreFragment());
                     fragmentTransaction.commit();
 
 
@@ -109,12 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setCurrentDate(Date date) {
-        setSubtitle(dateFormat.format(date));
-        if (compactCalendarView != null) {
-            compactCalendarView.setCurrentDate(date);
-        }
-    }
 
     @Override
     public void setTitle(CharSequence title) {
@@ -122,14 +89,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (tvTitle != null) {
             tvTitle.setText(title);
-        }
-    }
-
-    private void setSubtitle(String subtitle) {
-        TextView datePickerTextView = findViewById(R.id.date_picker_text_view);
-
-        if (datePickerTextView != null) {
-            datePickerTextView.setText(subtitle);
         }
     }
 

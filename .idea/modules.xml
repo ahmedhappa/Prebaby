@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Salamtek.iml" filepath="$PROJECT_DIR$/Salamtek.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrebabyApp.iml" filepath="$PROJECT_DIR$/PrebabyApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -27,4 +27,7 @@
     <string name="myweek">Myweek</string>
     <string name="dashboard">Dashboard</string>
     <string name="more">More</string>
+
+    <string name="appoint">Doctor Appointment</string>
+    <string name="editprofile">Edit Profile</string>
 </resources>

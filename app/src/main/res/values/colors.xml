@@ -4,8 +4,12 @@
     <color name="colorPrimaryDark">#0f7e9b</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorGray">#eeeeee</color>
-    <color name="first">#f9acbb</color>
-    <color name="lbne">#92d7ef</color>
+
+    <color name="softpink">#f9acbb</color>
+    <color name="softblue">#92d7ef</color>
+    <color name="softcyan">#a2eae0</color>
+    <color name="Lightgrayish">#e4e0dc</color>
+
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray">#999999</color>
