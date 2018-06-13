@@ -111,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             } catch (ApiException e) {
+                // Google Sign In fail
                 Toast.makeText(this, "Something went wrong please try again later", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
