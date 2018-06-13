@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "294857462425",
+    "firebase_url": "https://nono-bff7e.firebaseio.com",
+    "project_id": "nono-bff7e",
+    "storage_bucket": "nono-bff7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294857462425:android:ea797d427f761b13",
+        "android_client_info": {
+          "package_name": "com.usama.salamtek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294857462425-ta7te1ra2l0ectmsq3hcldcbfgqknt8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.usama.salamtek",
+            "certificate_hash": "31c94315649c6a16166b2621ec29ddd27337946d"
+          }
+        },
+        {
+          "client_id": "294857462425-5hc4qiv8popg60hjls1d3u8k14o86k1s.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "294857462425-5hc4qiv8popg60hjls1d3u8k14o86k1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA62lnIV4_mluwmnzKRKMVZWKViPYFhGR8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294857462425-5hc4qiv8popg60hjls1d3u8k14o86k1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

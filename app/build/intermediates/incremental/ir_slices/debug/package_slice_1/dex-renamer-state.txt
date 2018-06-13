@@ -1,0 +1,4 @@
+#Wed Jun 13 04:13:23 EEST 2018
+base.0=E\:\\college\\4 - Fourth year\\Term 2\\Graduation Project\\Salamtek\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.0=classes.dex
+renamed.0=classes.dex

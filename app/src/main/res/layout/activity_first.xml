@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/firstt"
+    android:orientation="vertical"
+    tools:context="com.usama.salamtek.FirstActivity">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="210dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
+
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btnstyle2"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="16dp"
+        android:text="@string/Tour"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btnstyle"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="16dp"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="#0f7e9b"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/SignupNow"
+        android:textColor="#0f7e9b"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="1.5dp"
+        android:layout_gravity="center"
+        android:background="@color/white" />
+
+
+</LinearLayout>

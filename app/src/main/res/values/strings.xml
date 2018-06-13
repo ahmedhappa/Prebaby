@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">NoNo</string>
+    <string name="login">Login</string>
+    <string name="Tour">Take a Tour</string>
+    <string name="SignupNow">Sign up Now</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="UsernameOrEmail">Username Or Email</string>
+    <string name="Username">Username</string>
+    <string name="pass">Password</string>
+    <string name="forget">Forget Your Password</string>
+    <string name="loginwith">Login With</string>
+    <string name="email">Email</string>
+    <string name="confirmPass">Confirm Password</string>
+    <string name="mobile">Mobile</string>
+    <string name="register">Registration</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="blood">Blood Pressure</string>
+    <string name="birth">Date of Birth</string>
+    <string name="age">Age</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="myweek">Myweek</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="more">More</string>
+</resources>
