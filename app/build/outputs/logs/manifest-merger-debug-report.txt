@@ -1,10 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-41:12
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-80:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1f040e1e31bc90d22b07083f429fea0a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.sundeepk:compact-calendar-view:2.0.2.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\compact-calendar-view-2.0.2.2.aar\7df90716c560da17ea7471188b64336e\AndroidManifest.xml:2:1-11:12
+MERGED from [com.bignerdranch.android:recyclerview-multiselect:0.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-multiselect-0.2.aar\07a2ade545737afa51ecabbd0278e9b7\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3bad18217fcb49624e9c8c1cf6797b3d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.1.aar\a8f76c281c109595c351983c315cbc11\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\bd1fe65a4e0c17aa6f55479a50fe18c1\AndroidManifest.xml:17:1-32:12
@@ -22,11 +23,13 @@ MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\usam
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\2948b02f0721c79571c04f8eac414b50\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\917e73974b4c0efb9ac73cb115e65017\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\76216a576b80e677d356e7f899e26d7c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\0dae0dbec32198156aa328221e67f942\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\b732e4dade06c0ef3f8523adb6ee5f3a\AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\92ffc25678a12bb496b6a07455c6a847\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\59a220bbe4d1452ccb1ea8c5a24dc251\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c4b1f91fb1814b95c20a01aa60e553f4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\899399c56379183509786d95e05a2e4f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f9b604627330a318c4d4db34e71e61fc\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\92ffc25678a12bb496b6a07455c6a847\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\3647650cc7834e1bd5b7185662353a7f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f7fcdd8c5c8de799fbf602616303d6ce\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\3872582a67939a546d26e3ea6b76d24c\AndroidManifest.xml:17:1-22:12
@@ -44,8 +47,8 @@ MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] C:\U
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9f2aa03b99d78276ad0c178a56ca50d5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\6cd9adac250cc20635ff5ed34ef2f38c\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\ab00f78b0a56e9e8ac71792beac544d3\AndroidManifest.xml:2:1-6:12
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-80:12
 	package
 		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:4:5-33
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
@@ -54,28 +57,20 @@ INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifes
 		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:1-80:12
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:2:11-69
-uses-permission#android.permission.INTERNET
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:23:5-67
-	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:22-64
 uses-sdk
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
 MERGED from [com.android.support:design:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1f040e1e31bc90d22b07083f429fea0a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1f040e1e31bc90d22b07083f429fea0a\AndroidManifest.xml:20:5-44
 MERGED from [com.github.sundeepk:compact-calendar-view:2.0.2.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\compact-calendar-view-2.0.2.2.aar\7df90716c560da17ea7471188b64336e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.sundeepk:compact-calendar-view:2.0.2.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\compact-calendar-view-2.0.2.2.aar\7df90716c560da17ea7471188b64336e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.bignerdranch.android:recyclerview-multiselect:0.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-multiselect-0.2.aar\07a2ade545737afa51ecabbd0278e9b7\AndroidManifest.xml:5:5-7:41
+MERGED from [com.bignerdranch.android:recyclerview-multiselect:0.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-multiselect-0.2.aar\07a2ade545737afa51ecabbd0278e9b7\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3bad18217fcb49624e9c8c1cf6797b3d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3bad18217fcb49624e9c8c1cf6797b3d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.1.aar\a8f76c281c109595c351983c315cbc11\AndroidManifest.xml:5:5-7:41
@@ -110,6 +105,12 @@ MERGED from [com.android.volley:volley:1.0.0] C:\Users\usama\.gradle\caches\tran
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\917e73974b4c0efb9ac73cb115e65017\AndroidManifest.xml:7:5-43
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\76216a576b80e677d356e7f899e26d7c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\76216a576b80e677d356e7f899e26d7c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\0dae0dbec32198156aa328221e67f942\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\0dae0dbec32198156aa328221e67f942\AndroidManifest.xml:20:5-44
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\b732e4dade06c0ef3f8523adb6ee5f3a\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\b732e4dade06c0ef3f8523adb6ee5f3a\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:transition:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\92ffc25678a12bb496b6a07455c6a847\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\92ffc25678a12bb496b6a07455c6a847\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\59a220bbe4d1452ccb1ea8c5a24dc251\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\59a220bbe4d1452ccb1ea8c5a24dc251\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\c4b1f91fb1814b95c20a01aa60e553f4\AndroidManifest.xml:20:5-44
@@ -118,8 +119,6 @@ MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\usama\.gradle\
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\899399c56379183509786d95e05a2e4f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f9b604627330a318c4d4db34e71e61fc\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\f9b604627330a318c4d4db34e71e61fc\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\92ffc25678a12bb496b6a07455c6a847\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\92ffc25678a12bb496b6a07455c6a847\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\3647650cc7834e1bd5b7185662353a7f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\3647650cc7834e1bd5b7185662353a7f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f7fcdd8c5c8de799fbf602616303d6ce\AndroidManifest.xml:20:5-44
@@ -154,20 +153,46 @@ MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\User
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\6cd9adac250cc20635ff5ed34ef2f38c\AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\ab00f78b0a56e9e8ac71792beac544d3\AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\ab00f78b0a56e9e8ac71792beac544d3\AndroidManifest.xml:4:5-43
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
-INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
+INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
 	tools:overrideLibrary
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:15-78
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:15-78
 	android:targetSdkVersion
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-81
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:6:5-81
 		INJECTED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:10:5-68
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:10:22-65
 application
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:10:5-39:19
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:12:5-78:19
+MERGED from [com.bignerdranch.android:recyclerview-multiselect:0.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-multiselect-0.2.aar\07a2ade545737afa51ecabbd0278e9b7\AndroidManifest.xml:9:5-20
+MERGED from [com.bignerdranch.android:recyclerview-multiselect:0.2] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\recyclerview-multiselect-0.2.aar\07a2ade545737afa51ecabbd0278e9b7\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.1.aar\a8f76c281c109595c351983c315cbc11\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.1] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.1.aar\a8f76c281c109595c351983c315cbc11\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\bd1fe65a4e0c17aa6f55479a50fe18c1\AndroidManifest.xml:22:5-30:19
@@ -192,6 +217,8 @@ MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\usam
 MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\5a8ea15129eafa67f67048d375b1c4b0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\917e73974b4c0efb9ac73cb115e65017\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\917e73974b4c0efb9ac73cb115e65017\AndroidManifest.xml:9:5-20
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\b732e4dade06c0ef3f8523adb6ee5f3a\AndroidManifest.xml:12:5-20
+MERGED from [com.github.clans:fab:1.6.4] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\fab-1.6.4.aar\b732e4dade06c0ef3f8523adb6ee5f3a\AndroidManifest.xml:12:5-20
 MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\798bf21f23647ba4c549cb140eaae17d\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\798bf21f23647ba4c549cb140eaae17d\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\0aaa55cc1004d9e01691a5c4e8bc4050\AndroidManifest.xml:5:5-20
@@ -212,60 +239,124 @@ MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\User
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\6cd9adac250cc20635ff5ed34ef2f38c\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\ab00f78b0a56e9e8ac71792beac544d3\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\ab00f78b0a56e9e8ac71792beac544d3\AndroidManifest.xml:5:5-20
-	android:supportsRtl
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:16:9-41
+	android:hardwareAccelerated
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:14:9-44
 	android:roundIcon
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:17:9-54
 	android:icon
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:16:9-40
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:18:9-40
 activity#com.usama.salamtek.MainActivity
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:17:9-24:20
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:19:9-23:20
 	android:theme
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:19:13-56
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:21:13-56
 	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:18:13-41
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:20:13-23:29
-action#android.intent.action.MAIN
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:21:17-69
-	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:21:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:22:17-77
-	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:20:13-41
 activity#com.usama.salamtek.SplachActivity
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:25:9-52
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:24:9-52
 	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:25:19-49
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:24:19-49
 meta-data#preloaded_fonts
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:27:9-29:57
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:26:9-28:57
 	android:resource
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:29:13-54
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:28:13-54
 	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:28:13-43
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:27:13-43
 activity#com.usama.salamtek.FirstActivity
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:30:9-51
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:30:19-48
+activity#com.usama.salamtek.LoginActivity
 ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:31:9-51
 	android:name
 		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:31:19-48
-activity#com.usama.salamtek.LoginActivity
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:32:9-34:20
-	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:32:19-48
 activity#com.usama.salamtek.RegistrationActivity
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:35:9-58
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:32:9-58
 	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:35:19-55
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:32:19-55
 activity#com.usama.salamtek.Tabs.TabsActivity
-ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:36:9-38:20
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:33:9-55
 	android:name
-		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:36:19-52
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:33:19-52
+activity#com.usama.salamtek.EditProfileActivity
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:34:9-57
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:34:19-54
+activity#com.usama.salamtek.Reminder.ReminderMainActivity
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:35:9-41:20
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:35:19-64
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:36:13-40:29
+action#android.intent.action.MAIN
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:39:27-74
+activity#com.usama.salamtek.Reminder.CreateOrEditAlert
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:42:9-49:20
+	android:parentActivityName
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:44:13-72
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:43:13-55
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:45:13-47:49
+	android:value
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:47:17-46
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:46:17-63
+activity#com.usama.salamtek.Reminder.CreateOrEditNote
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:50:9-56:20
+	android:parentActivityName
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:52:13-72
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:51:13-54
+receiver#com.usama.salamtek.Reminder.AlarmSetter
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:58:9-62:20
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:58:19-55
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:59:13-61:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:60:17-79
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:60:25-76
+receiver#com.usama.salamtek.Reminder.AlarmReceiver
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:63:9-65:38
+	android:enabled
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:65:13-35
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:64:13-51
+service#com.usama.salamtek.Reminder.AlarmService
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:67:9-69:38
+	android:enabled
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:69:13-35
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:68:13-50
+provider#com.usama.salamtek.Reminder.ReminderContentProvider
+ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:70:9-77:66
+	android:readPermission
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:76:13-61
+	android:grantUriPermissions
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:74:13-47
+	android:authorities
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:72:13-53
+	android:label
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:75:13-46
+	android:exported
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:73:13-36
+	android:writePermission
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:77:13-63
+	android:name
+		ADDED from D:\FCI\5..GraduationProject\PrebabyApp\app\src\main\AndroidManifest.xml:71:13-61
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\bd1fe65a4e0c17aa6f55479a50fe18c1\AndroidManifest.xml:23:9-29:75
 	android:excludeFromRecents
@@ -306,14 +397,6 @@ MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\cac
 MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:24:22-76
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\2dfa6ee9184b3fb602ca55eb47617e23\AndroidManifest.xml:24:5-68
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:25:22-65
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
 ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\386ede11345684ff96c1308afacc7e3a\AndroidManifest.xml:28:9-32:20
 MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\usama\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\6b01937a93f715a97d26f01cc850c0ce\AndroidManifest.xml:28:9-32:20

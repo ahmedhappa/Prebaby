@@ -30,4 +30,36 @@
 
     <string name="appoint">Doctor Appointment</string>
     <string name="editprofile">Edit Profile</string>
+    <string name="count">Count down</string>
+    <string name="babysize">Baby Size</string>
+    <string name="tips">Tips</string>
+    <string name="articles">Articles</string>
+    <string name="question">Questions</string>
+    <string name="reminder">Reminder</string>
+    <string name="calendar">Calendar</string>
+    <string name="weeknumber">Week Number</string>
+    <string name="empty">empty</string>
+    <string name="addalert">Add Alert</string>
+    <string name="fab_add_note">Add Note</string>
+    <string name="delete">Delete</string>
+    <string name="title">Title</string>
+    <string name="enter_a_reminder">Enter a reminder..</string>
+
+    <string name="action_bar_create_alert">Create Alert</string>
+    <string name="action_bar_edit_alert">Edit Alert</string>
+    <string name="action_bar_create_note">Create Note</string>
+    <string name="action_bar_edit_note">Edit Note</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_prompt">Do you want to save?</string>
+    <string name="delete_prompt">Are you sure you want to delete?</string>
+    <string name="repeat">Repeat</string>
+
+    <string name="show_all_toast">Showing all items</string>
+    <string name="show_alerts_toast">Showing all alerts</string>
+    <string name="show_notes_toast">Showing all notes</string>
 </resources>

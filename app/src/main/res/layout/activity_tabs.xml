@@ -9,7 +9,10 @@
     <FrameLayout
         android:id="@+id/tabFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabslayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
     </FrameLayout>
 

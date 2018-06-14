@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.usama.salamtek.MainActivity">
 
-
-
     <include layout="@layout/activity_tabs" />
 
 </android.support.design.widget.CoordinatorLayout>
