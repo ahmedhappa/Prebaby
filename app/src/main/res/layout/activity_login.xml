@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login2"
+    android:background="@drawable/homedesign"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="190dp" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="70dp"
-        android:background="@android:color/transparent"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_person_white_24dp"
         android:drawablePadding="12dp"
         android:drawableStart="@drawable/ic_person_white_24dp"
@@ -24,26 +28,18 @@
         android:inputType="textEmailAddress"
         android:maxLines="1"
         android:padding="8dp"
+        android:textColor="@color/white"
         android:textColorHint="#ffffff" />
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:background="@color/white" />
 
 
     <EditText
         android:id="@+id/login_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
         android:layout_marginTop="4dp"
-        android:background="@android:color/transparent"
+        android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_lock_white_24dp"
         android:drawablePadding="12dp"
         android:drawableStart="@drawable/ic_lock_white_24dp"
@@ -55,15 +51,9 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:paddingTop="8dp"
+        android:textColor="@color/white"
         android:textColorHint="#ffffff" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:background="@color/white" />
 
     <TextView
         style="@style/TextAppearance.AppCompat.Body1"
@@ -80,8 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginRight="110dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginRight="115dp"
         android:background="@color/white" />
 
 
@@ -114,22 +104,14 @@
         android:textColor="#fff"
         android:textSize="18sp" />
 
-    <RelativeLayout
+
+    <ImageButton
+        android:id="@+id/gmail_login"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp">
-
-        <ImageButton
-            android:id="@+id/gmail_login"
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="24dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/gplus" />
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/gplus" />
 
 
 </LinearLayout>

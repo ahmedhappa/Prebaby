@@ -28,16 +28,22 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".FirstActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".Tabs.TabsActivity" />
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".Reminder.ReminderMainActivity">
+        <activity android:name=".EditProfileActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".Reminder.ReminderMainActivity">
+
+
         </activity>
         <activity
             android:name=".Reminder.CreateOrEditAlert"

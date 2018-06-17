@@ -43,12 +43,4 @@ public class ReminderMainActivity extends AppCompatActivity {
 
     }
 
-    public void reloadReminders(ReminderType type) {
-        Bundle args = new Bundle();
-        args.putSerializable(ReminderParams.TYPE, type);
-        Fragment reminderFragment = new ReminderFragment();
-        reminderFragment.setArguments(args);
-        mFragmentManager.beginTransaction().replace(R.id.content_frame, reminderFragment).commit();
-    }
-
 }

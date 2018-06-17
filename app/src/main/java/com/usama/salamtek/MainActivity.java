@@ -1,9 +1,16 @@
 package com.usama.salamtek;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
@@ -51,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
 
                 if (tab.getText().toString().equals(getString(R.string.home))) {
+
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
                     fragmentTransaction.commit();
+                    tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.softpink));
 
                 }
                 if (tab.getText().toString().equals(getString(R.string.more))) {
@@ -91,6 +100,4 @@ public class MainActivity extends AppCompatActivity {
             tvTitle.setText(title);
         }
     }
-
-
 }

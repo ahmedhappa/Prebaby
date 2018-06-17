@@ -24,8 +24,8 @@
     <color name="colorTextPrimary">#FFFFFF</color>
     <color name="colorTextDisable">#66FFFFFF</color>
 
-    <color name="FABNormal">#E91E63</color>
-    <color name="FABRipple">#F06292</color>
+    <color name="FABNormal">#70caea</color>
+    <color name="FABRipple">#c5eaf7</color>
 
     <!-- Drawable colors -->
     <color name="itemSelected">#EEEEEE</color>

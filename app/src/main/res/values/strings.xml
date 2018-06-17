@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NoNo</string>
+    <string name="app_name">Prebaby</string>
     <string name="login">Login</string>
     <string name="Tour">Take a Tour</string>
     <string name="SignupNow">Sign up Now</string>
@@ -30,6 +30,7 @@
 
     <string name="appoint">Doctor Appointment</string>
     <string name="editprofile">Edit Profile</string>
+    <string name="saveprofile">Save Profile</string>
     <string name="count">Count down</string>
     <string name="babysize">Baby Size</string>
     <string name="tips">Tips</string>
@@ -62,4 +63,7 @@
     <string name="show_all_toast">Showing all items</string>
     <string name="show_alerts_toast">Showing all alerts</string>
     <string name="show_notes_toast">Showing all notes</string>
+
+    <string name="notereminder">Note Or Reminder</string>
+    <string name="create">Create it</string>
 </resources>

@@ -30,14 +30,15 @@
 
             <EditText
                 android:id="@+id/edit_username"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="8dp"
                 android:layout_toRightOf="@id/userImg"
-                android:text="@string/Username"
+                android:backgroundTint="@color/softblue"
+                android:hint="@string/Username"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </RelativeLayout>
@@ -61,14 +62,15 @@
 
             <EditText
                 android:id="@+id/edit_mobile"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toEndOf="@id/ivContactItem1"
                 android:layout_toRightOf="@id/ivContactItem1"
-                android:text="@string/mobile"
+                android:backgroundTint="@color/softblue"
+                android:hint="@string/mobile"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </RelativeLayout>
@@ -93,15 +95,16 @@
 
             <EditText
                 android:id="@+id/edit_email"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toRightOf="@id/ivContactItem3"
+                android:backgroundTint="@color/softblue"
                 android:ellipsize="end"
+                android:hint="@string/email"
                 android:maxLines="1"
-                android:text="@string/email"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </RelativeLayout>
@@ -131,16 +134,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toRightOf="@+id/ivContactItem5"
+                android:backgroundTint="@color/softblue"
                 android:ellipsize="end"
+                android:hint="@string/country"
                 android:maxLines="1"
-                android:text="@string/country"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="---" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text=","
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/edit_city"
@@ -148,9 +155,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvNumber5"
                 android:layout_toRightOf="@id/ivContactItem5"
-                android:text="@string/city"
+                android:backgroundTint="@color/softblue"
+                android:hint="@string/city"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </LinearLayout>
@@ -176,15 +184,16 @@
 
             <EditText
                 android:id="@+id/edit_age"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toRightOf="@+id/ageicon"
+                android:backgroundTint="@color/softblue"
                 android:ellipsize="end"
+                android:hint="@string/age"
                 android:maxLines="1"
-                android:text="@string/age"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </RelativeLayout>
@@ -209,15 +218,16 @@
 
             <EditText
                 android:id="@+id/edit_height"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toRightOf="@+id/heighticon"
+                android:backgroundTint="@color/softblue"
                 android:ellipsize="end"
+                android:hint="@string/height"
                 android:maxLines="1"
-                android:text="@string/height"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </RelativeLayout>
@@ -242,62 +252,16 @@
 
             <EditText
                 android:id="@+id/edit_weight"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_toRightOf="@+id/weighticon"
+                android:backgroundTint="@color/softblue"
                 android:ellipsize="end"
+                android:hint="@string/weight"
                 android:maxLines="1"
-                android:text="@string/weight"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
-
-        </RelativeLayout>
-
-        <include layout="@layout/item_divider" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:padding="@dimen/activity_horizontal_margin">
-
-            <ImageView
-                android:id="@+id/apppintmenticon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                app:srcCompat="@drawable/appointment" />
-
-            <TextView
-                android:id="@+id/apppintment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/apppintmenticon"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginStart="13dp"
-                android:layout_toRightOf="@+id/apppintmenticon"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/appoint"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
-
-            <ToggleButton
-                android:id="@+id/apppintCalendar"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:background="@drawable/calendar"
-                android:checked="true"
-                android:padding="6dp" />
+                android:textColor="@color/colorPrimaryDark" />
 
         </RelativeLayout>
 
@@ -308,7 +272,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/btnstyle3"
-            android:text="@string/editprofile"
+            android:text="@string/saveprofile"
             android:textColor="@color/white" />
 
         <TextView
@@ -316,6 +280,5 @@
             android:layout_height="60dp" />
 
     </LinearLayout>
-
 
 </android.support.v4.widget.NestedScrollView>
