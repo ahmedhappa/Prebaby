@@ -1,11 +1,18 @@
 package com.usama.salamtek;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -16,12 +23,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    final String serverPageUrl = "http://192.168.1.4:8080/Graduation_Project/addUserData.php";
+    final String serverPageUrl = "http://192.168.1.3:8080/Graduation_Project/addUserData.php";
 
     Response.Listener<String> serverResponse;
     Response.ErrorListener errorListener;
@@ -29,7 +38,12 @@ public class RegistrationActivity extends AppCompatActivity {
     RequestQueue requestQueue;
 
     EditText eMail, userName, age, mobile, pass, confirmPass, country, city;
+    ImageView profilePic;
     Button regBtn;
+
+    final int profileReqCod = 10;
+    Bitmap img;
+    String imgAsString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
         confirmPass = findViewById(R.id.confirmPass);
         country = findViewById(R.id.country);
         city = findViewById(R.id.city);
+        profilePic = findViewById(R.id.profilePic);
         regBtn = findViewById(R.id.regs_bun);
 
 
@@ -54,6 +69,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if ((sPass.equals(sConfirmPass))) {
                     serverResponse = response -> {
                         Log.i("server response", response);
+                        Toast.makeText(this, "You Signed up Successfully", Toast.LENGTH_SHORT).show();
                         requestQueue.stop();
                     };
 
@@ -71,9 +87,11 @@ public class RegistrationActivity extends AppCompatActivity {
                             data.put("age", sAge);
                             data.put("mobile", sMobile);
                             data.put("pass", sPass);
-                            data.put("pass_confirm", sConfirmPass);
                             data.put("country", sCountry);
                             data.put("city", sCity);
+                            if (!imgAsString.equals("")) {
+                                data.put("image", imgAsString);
+                            }
                             return data;
                         }
                     };
@@ -87,5 +105,28 @@ public class RegistrationActivity extends AppCompatActivity {
 
         });
 
+        profilePic.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            intent.setType("image/*");
+            startActivityForResult(intent, profileReqCod);
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == profileReqCod && resultCode == RESULT_OK && data != null) {
+            Uri imgData = data.getData();
+            try {
+                img = MediaStore.Images.Media.getBitmap(getContentResolver(), imgData);
+                profilePic.setImageBitmap(img);
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                img.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                byte[] arr = byteArrayOutputStream.toByteArray();
+                imgAsString = Base64.encodeToString(arr, Base64.DEFAULT);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

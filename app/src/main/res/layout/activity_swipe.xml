@@ -4,7 +4,7 @@
     android:id="@+id/swipeText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.usama.salamtek.SwipeActivity">
+    tools:context=".SwipeActivity">
 
     <LinearLayout
         android:layout_width="80dp"

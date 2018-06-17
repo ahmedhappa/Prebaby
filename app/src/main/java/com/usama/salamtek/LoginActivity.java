@@ -21,6 +21,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.usama.salamtek.Model.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ImageButton gMailLogin;
 
-    private final String serverPageUrl = "http://192.168.1.4:8080/Graduation_Project/getUserData.php";
+    private final String serverPageUrl = "http://192.168.1.3:8080/Graduation_Project/getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
     private static final int signInRequstCode = 50;
@@ -57,7 +61,23 @@ public class LoginActivity extends AppCompatActivity {
                     if (!response.equals("null")) {
                         Log.i("Server Response", response);
                         Intent intent = new Intent(this, MainActivity.class);
-                        startActivity(intent);
+                        User user = new User();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            user.setName(jsonObject.getString("user_name"));
+                            user.setAge(jsonObject.getString("age"));
+                            user.setEmail(jsonObject.getString("email"));
+                            user.setMobile(jsonObject.getString("mobile"));
+                            user.setPass(jsonObject.getString("pass"));
+                            user.setCountry(jsonObject.getString("country"));
+                            user.setCity(jsonObject.getString("city"));
+                            user.setImage(jsonObject.getString("image"));
+                            user.setId(Integer.parseInt(jsonObject.getString("user_id")));
+                            intent.putExtra("user_data", user);
+                            startActivity(intent);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     } else {
                         Toast.makeText(this, "Wrong User Name Or Password", Toast.LENGTH_SHORT).show();
                     }

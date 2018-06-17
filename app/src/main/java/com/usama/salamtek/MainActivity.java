@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
         //setTitle("CompactCalendarViewToolbar");
 
         tabLayout = (TabLayout) findViewById(R.id.tabslayout);
+
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
+        fragmentTransaction.commit();
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
@@ -31,11 +32,6 @@
         <activity
             android:name="com.usama.salamtek.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.usama.salamtek.SplachActivity" />
 
@@ -44,8 +40,15 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name="com.usama.salamtek.FirstActivity" />
-        <activity android:name="com.usama.salamtek.LoginActivity" />
-        <activity android:name="com.usama.salamtek.RegistrationActivity" />
+        <activity android:name="com.usama.salamtek.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.usama.salamtek.RegistrationActivity" >
+        </activity>
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" />
         <activity android:name="com.usama.salamtek.EditProfileActivity" />
         <activity android:name="com.usama.salamtek.Reminder.ReminderMainActivity" />

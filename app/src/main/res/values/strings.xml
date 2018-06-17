@@ -66,4 +66,5 @@
 
     <string name="notereminder">Note Or Reminder</string>
     <string name="create">Create it</string>
+    <string name="not_available">Not Available</string>
 </resources>
