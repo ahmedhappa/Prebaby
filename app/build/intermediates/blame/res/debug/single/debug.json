@@ -596,12 +596,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_close_item_material.xml.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\layout\\abc_action_mode_close_item_material.xml"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_swipe.xml.flat",
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\layout\\activity_swipe.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_close_item_material.xml.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
