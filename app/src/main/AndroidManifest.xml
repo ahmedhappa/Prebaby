@@ -19,7 +19,11 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".SplachActivity" />
 
@@ -28,30 +32,17 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".FirstActivity" />
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".Tabs.TabsActivity" />
-        <activity android:name=".EditProfileActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".Reminder.ReminderMainActivity">
-
-
-        </activity>
+        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".Reminder.ReminderMainActivity" />
         <activity
             android:name=".Reminder.CreateOrEditAlert"
             android:parentActivityName=".Reminder.ReminderMainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-
         </activity>
         <activity
             android:name=".Reminder.CreateOrEditNote"
@@ -73,6 +64,7 @@
         <service
             android:name=".Reminder.AlarmService"
             android:enabled="true" />
+
         <provider
             android:name=".Reminder.ReminderContentProvider"
             android:authorities="com.usama.salamtek"
@@ -81,6 +73,8 @@
             android:label="LentItemsProvider"
             android:readPermission="com.usama.salamtek.READ"
             android:writePermission="com.usama.salamtek.WRITE" />
+
+        <activity android:name=".SwipeActivity" />
     </application>
 
 </manifest>

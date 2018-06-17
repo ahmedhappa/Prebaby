@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
                     fragmentTransaction.commit();
-                    tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.softpink));
 
                 }
                 if (tab.getText().toString().equals(getString(R.string.more))) {

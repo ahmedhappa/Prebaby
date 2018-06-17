@@ -4,12 +4,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3872582a67939a546d26e3ea6b76d24c\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
@@ -44,12 +44,12 @@
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_fab_background.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\1f040e1e31bc90d22b07083f429fea0a\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_design_tint_password_toggle.xml.flat",
@@ -100,12 +100,12 @@
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\layout\\fragment_myweek.xml"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3872582a67939a546d26e3ea6b76d24c\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -156,24 +156,24 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e2a5a09e4af639e1f56c151ca85937a1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_seek_thumb.xml.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\color\\abc_tint_seek_thumb.xml"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e2a5a09e4af639e1f56c151ca85937a1\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_switch_track.xml.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\color-v23\\abc_tint_switch_track.xml"
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_seek_thumb.xml.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_slide_in_from_right.xml.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\b732e4dade06c0ef3f8523adb6ee5f3a\\res\\anim\\fab_slide_in_from_right.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_fab_slide_in_from_right.xml.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\fab-1.6.4.aar\\b732e4dade06c0ef3f8523adb6ee5f3a\\res\\anim\\fab_slide_in_from_right.xml"
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_switch_track.xml.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
@@ -192,12 +192,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3872582a67939a546d26e3ea6b76d24c\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3872582a67939a546d26e3ea6b76d24c\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -260,12 +260,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e2a5a09e4af639e1f56c151ca85937a1\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e2a5a09e4af639e1f56c151ca85937a1\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -288,6 +288,10 @@
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\drawable\\notification.xml"
     },
     {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo2.png.flat",
+        "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\drawable\\logo2.png"
+    },
+    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
@@ -296,12 +300,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\f7fcdd8c5c8de799fbf602616303d6ce\\res\\layout\\notification_template_media.xml"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\f7fcdd8c5c8de799fbf602616303d6ce\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
@@ -322,6 +326,10 @@
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_dividerw.xml.flat",
+        "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\layout\\item_dividerw.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -544,6 +552,10 @@
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\drawable-v24\\splach.png"
     },
     {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_refresh.png.flat",
+        "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\drawable\\refresh.png"
+    },
+    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
@@ -586,6 +598,10 @@
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_close_item_material.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_swipe.xml.flat",
+        "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\layout\\activity_swipe.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -1056,6 +1072,10 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e2a5a09e4af639e1f56c151ca85937a1\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
     },
     {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_homedesign.png.flat",
+        "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\drawable\\homedesign.png"
+    },
+    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -1356,12 +1376,12 @@
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_in.xml.flat",
-        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\anim\\abc_fade_in.xml"
-    },
-    {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_up_container.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_in.xml.flat",
+        "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\3bad18217fcb49624e9c8c1cf6797b3d\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_fab_add.png.flat",
@@ -2206,6 +2226,10 @@
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_raise.xml.flat",
         "source": "C:\\Users\\usama\\.gradle\\caches\\transforms-1\\files-1.1\\recyclerview-multiselect-0.2.aar\\07a2ade545737afa51ecabbd0278e9b7\\res\\anim-v21\\raise.xml"
+    },
+    {
+        "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profileregis.png.flat",
+        "source": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\src\\main\\res\\drawable\\profileregis.png"
     },
     {
         "merged": "D:\\FCI\\5..GraduationProject\\PrebabyApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",

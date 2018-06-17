@@ -31,6 +31,11 @@
         <activity
             android:name="com.usama.salamtek.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name="com.usama.salamtek.SplachActivity" />
 
@@ -39,19 +44,11 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name="com.usama.salamtek.FirstActivity" />
-        <activity android:name="com.usama.salamtek.LoginActivity" >
-        </activity>
+        <activity android:name="com.usama.salamtek.LoginActivity" />
         <activity android:name="com.usama.salamtek.RegistrationActivity" />
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" />
-        <activity android:name="com.usama.salamtek.EditProfileActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.usama.salamtek.Reminder.ReminderMainActivity" >
-        </activity>
+        <activity android:name="com.usama.salamtek.EditProfileActivity" />
+        <activity android:name="com.usama.salamtek.Reminder.ReminderMainActivity" />
         <activity
             android:name="com.usama.salamtek.Reminder.CreateOrEditAlert"
             android:parentActivityName="com.usama.salamtek.Reminder.ReminderMainActivity" >
@@ -89,6 +86,7 @@
             android:readPermission="com.usama.salamtek.READ"
             android:writePermission="com.usama.salamtek.WRITE" />
 
+        <activity android:name="com.usama.salamtek.SwipeActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
