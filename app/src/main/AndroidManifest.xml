@@ -79,7 +79,6 @@
             android:readPermission="com.usama.salamtek.READ"
             android:writePermission="com.usama.salamtek.WRITE" />
 
-        <activity android:name=".SwipeActivity" />
     </application>
 
 </manifest>
