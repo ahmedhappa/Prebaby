@@ -25,8 +25,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.usama.salamtek.Tabs.DashboardFragment;
 import com.usama.salamtek.Tabs.HomeFragment;
 import com.usama.salamtek.Tabs.MoreFragment;
+import com.usama.salamtek.Tabs.MyweekFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -69,17 +71,25 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
                     fragmentTransaction.commit();
-
                 }
                 if (tab.getText().toString().equals(getString(R.string.more))) {
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, new MoreFragment());
                     fragmentTransaction.commit();
-
-
                 }
-
+                if (tab.getText().toString().equals(getString(R.string.myweek))) {
+                    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.tabFrame, new MyweekFragment());
+                    fragmentTransaction.commit();
+                }
+                if (tab.getText().toString().equals(getString(R.string.dashboard))) {
+                    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.tabFrame, new DashboardFragment());
+                    fragmentTransaction.commit();
+                }
             }
 
             @Override

@@ -61,6 +61,4 @@
     <style name="ToolbarSubtitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
         <item name="android:textColor">@android:color/white</item>
     </style>
-
-
 </resources>

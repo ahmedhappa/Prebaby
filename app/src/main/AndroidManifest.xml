@@ -19,9 +19,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".SplachActivity" />
 
         <meta-data
@@ -29,18 +27,12 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".FirstActivity" />
-        <activity android:name=".LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".RegistrationActivity" >
+        <activity android:name=".LoginActivity">
 
         </activity>
+        <activity android:name=".RegistrationActivity"></activity>
         <activity android:name=".Tabs.TabsActivity" />
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".EditProfileActivity" />
         <activity android:name=".Reminder.ReminderMainActivity" />
         <activity
             android:name=".Reminder.CreateOrEditAlert"
@@ -79,6 +71,13 @@
             android:readPermission="com.usama.salamtek.READ"
             android:writePermission="com.usama.salamtek.WRITE" />
 
+        <activity android:name=".QuestionsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
