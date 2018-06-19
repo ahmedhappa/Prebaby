@@ -26,10 +26,14 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".FirstActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".FirstActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"/>
         <activity android:name=".RegistrationActivity"></activity>
         <activity android:name=".Tabs.TabsActivity" />
         <activity android:name=".EditProfileActivity" />
@@ -72,11 +76,7 @@
             android:writePermission="com.usama.salamtek.WRITE" />
 
         <activity android:name=".QuestionsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

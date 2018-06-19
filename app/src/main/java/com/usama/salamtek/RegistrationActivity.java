@@ -42,7 +42,7 @@ public class RegistrationActivity extends AppCompatActivity {
     Button regBtn;
 
     final int profileReqCod = 10;
-    Bitmap img;
+
     String imgAsString = "";
 
     @Override
@@ -117,11 +117,12 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == profileReqCod && resultCode == RESULT_OK && data != null) {
             Uri imgData = data.getData();
+            Bitmap img;
             try {
                 img = MediaStore.Images.Media.getBitmap(getContentResolver(), imgData);
                 profilePic.setImageBitmap(img);
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                img.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                img.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
                 byte[] arr = byteArrayOutputStream.toByteArray();
                 imgAsString = Base64.encodeToString(arr, Base64.DEFAULT);
             } catch (IOException e) {

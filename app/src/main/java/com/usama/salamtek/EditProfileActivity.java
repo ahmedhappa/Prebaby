@@ -1,27 +1,22 @@
 package com.usama.salamtek;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.util.Base64;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,7 +26,6 @@ import com.usama.salamtek.Model.User;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,7 +35,6 @@ public class EditProfileActivity extends AppCompatActivity {
     ToggleButton editProPic;
     EditText name, mobile, email, country, city, age, hight, wight;
     User user;
-    Bitmap img;
     Button editProfileBtn;
 
     final int imgCode = 10;
@@ -144,18 +137,22 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == imgCode && resultCode == RESULT_OK) {
             Uri imgData = data.getData();
+            Bitmap img;
             try {
                 img = MediaStore.Images.Media.getBitmap(getContentResolver(), imgData);
                 profilePic.setImageBitmap(img);
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                img.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                img.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
                 byte[] arr = byteArrayOutputStream.toByteArray();
                 user.setImage(Base64.encodeToString(arr, Base64.DEFAULT));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
+
+
 }
 
 

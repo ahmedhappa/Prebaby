@@ -73,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                             user.setCity(jsonObject.getString("city"));
                             user.setImage(jsonObject.getString("image"));
                             user.setId(Integer.parseInt(jsonObject.getString("user_id")));
+                            user.setChildDateOfBirth(jsonObject.getString("child_date_of_pregnancy"));
                             intent.putExtra("user_data", user);
                             startActivity(intent);
                         } catch (JSONException e) {

@@ -38,9 +38,14 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name="com.usama.salamtek.FirstActivity" />
-        <activity android:name="com.usama.salamtek.LoginActivity" >
+        <activity android:name="com.usama.salamtek.FirstActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name="com.usama.salamtek.LoginActivity" />
         <activity android:name="com.usama.salamtek.RegistrationActivity" />
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" />
         <activity android:name="com.usama.salamtek.EditProfileActivity" />
@@ -83,11 +88,6 @@
             android:writePermission="com.usama.salamtek.WRITE" />
 
         <activity android:name="com.usama.salamtek.QuestionsActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"

@@ -6,11 +6,19 @@ import android.os.Parcelable;
 import java.security.PrivateKey;
 
 public class User implements Parcelable {
-    private String email, name, age, mobile, pass, country, city, image;
+    private String email, name, age, mobile, pass, country, city, image, childDateOfBirth;
     private int id;
 
     public int getId() {
         return id;
+    }
+
+    public String getChildDateOfBirth() {
+        return childDateOfBirth;
+    }
+
+    public void setChildDateOfBirth(String childDateOfBirth) {
+        this.childDateOfBirth = childDateOfBirth;
     }
 
     public void setId(int id) {
@@ -31,6 +39,7 @@ public class User implements Parcelable {
         city = in.readString();
         image = in.readString();
         id = in.readInt();
+        childDateOfBirth = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -125,5 +134,6 @@ public class User implements Parcelable {
         parcel.writeString(city);
         parcel.writeString(image);
         parcel.writeInt(id);
+        parcel.writeString(childDateOfBirth);
     }
 }
