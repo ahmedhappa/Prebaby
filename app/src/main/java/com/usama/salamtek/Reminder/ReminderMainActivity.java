@@ -1,5 +1,6 @@
 package com.usama.salamtek.Reminder;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.usama.salamtek.MainActivity;
 import com.usama.salamtek.R;
+import com.usama.salamtek.Tabs.HomeFragment;
 
 public class ReminderMainActivity extends AppCompatActivity {
     private TextView mNavTitle;
@@ -43,4 +46,9 @@ public class ReminderMainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ReminderMainActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

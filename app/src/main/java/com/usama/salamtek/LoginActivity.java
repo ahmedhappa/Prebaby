@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ImageButton gMailLogin;
 
-    private final String serverPageUrl = "http://192.168.1.3:8080/Graduation_Project/getUserData.php";
+    private final String serverPageUrl = "http://192.168.1.7:8080/Graduation_Project/getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
     private static final int signInRequstCode = 50;

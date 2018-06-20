@@ -48,7 +48,7 @@ public class MyweekFragment extends Fragment {
     long elapsedWeeks;
     ImageView weekImage;
 
-    private final String serverPageUrl = "http://192.168.1.3:8080/Graduation_Project/getTipsData.php";
+    private final String serverPageUrl = "http://192.168.1.7:8080/Graduation_Project/getTipsData.php";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

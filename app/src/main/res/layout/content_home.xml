@@ -12,170 +12,158 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/corners"
-            android:clickable="true"
+            android:orientation="vertical"
             android:padding="@dimen/activity_horizontal_margin">
 
-            <ImageView
-                android:id="@+id/weekImg"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                app:srcCompat="@drawable/week" />
+                android:fontFamily="@font/audiowide"
+                android:text="Notification Center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
 
-
-            <TextView
-                android:id="@+id/weekTab"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/weekImg"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_toRightOf="@id/weekImg"
-                android:text="@string/myweek"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:layout_marginTop="8dp"
+                android:clickable="true">
 
-            <TextView
-                android:id="@+id/weekNotifi"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_alignBaseline="@+id/weekImg"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="bottom|right"
-                android:background="@drawable/notification"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/weekImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    app:srcCompat="@drawable/week" />
 
-            <ImageView
-                android:id="@+id/DashImg"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/weekImg"
+                    android:text="@string/myweek"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#212121" />
+
+                <TextView
+                    android:id="@+id/weekNotifi"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/notification"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/weekImg"
-                android:layout_gravity="center"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                app:srcCompat="@drawable/chart" />
+                android:layout_marginTop="8dp"
+                android:clickable="true">
 
+                <ImageView
+                    android:id="@+id/dashImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    app:srcCompat="@drawable/chart" />
 
-            <TextView
-                android:id="@+id/dashboard"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/dashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/dashImg"
+                    android:text="@string/dashboard"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#212121" />
+
+                <TextView
+                    android:id="@+id/dashNotifi"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/notification"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/DashImg"
-                android:layout_below="@+id/weekTab"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/DashImg"
-                android:text="@string/dashboard"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
+                android:layout_marginTop="8dp"
+                android:clickable="true">
 
-            <TextView
-                android:id="@+id/dashnotifi"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_alignBaseline="@+id/dashboard"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/weekImg"
-                android:layout_gravity="bottom|right"
-                android:background="@drawable/notification"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/qImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    app:srcCompat="@drawable/question" />
 
+                <TextView
+                    android:id="@+id/questions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/qImg"
+                    android:text="@string/question"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#212121" />
 
-            <ImageView
-                android:id="@+id/moreImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/DashImg"
-                android:layout_gravity="center"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                app:srcCompat="@drawable/more" />
-
-
-            <TextView
-                android:id="@+id/more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/dashboard"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/moreImg"
-                android:text="@string/more"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
-
-            <TextView
-                android:id="@+id/moreNotifi"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_alignBaseline="@+id/more"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/dashnotifi"
-                android:layout_gravity="bottom|right"
-                android:background="@drawable/notification"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/qImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/moreImg"
-                android:layout_gravity="center"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                app:srcCompat="@drawable/question" />
+                <TextView
+                    android:id="@+id/questionNotifi"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/notification"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
 
 
-            <TextView
-                android:id="@+id/questions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/more"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/qImg"
-                android:text="@string/question"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
-
-            <TextView
-                android:id="@+id/questionsNotifi"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_alignBaseline="@+id/questions"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/moreNotifi"
-                android:layout_gravity="bottom|right"
-                android:background="@drawable/notification"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -257,6 +245,7 @@
                     android:textSize="18sp" />
 
                 <ImageView
+                    android:id="@+id/newReminder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
