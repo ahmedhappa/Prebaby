@@ -1,7 +1,9 @@
 package com.usama.salamtek;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
@@ -39,7 +41,8 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ImageButton gMailLogin;
 
-    private final String serverPageUrl = "http://192.168.1.7:8080/Graduation_Project/getUserData.php";
+    public static final String serverIP = "http://192.168.1.2:8080/Graduation_Project/";
+    private final String serverPageUrl = serverIP + "getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
     private static final int signInRequstCode = 50;
@@ -60,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 serverResponse = response -> {
                     if (!response.equals("null")) {
                         Log.i("Server Response", response);
+                        setWeekAndDay();
                         Intent intent = new Intent(this, MainActivity.class);
                         User user = new User();
                         try {
@@ -114,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         gMailLogin.setOnClickListener(view -> {
+            setWeekAndDay();
             Intent signInIntent = mGoogleSignInClient.getSignInIntent();
             startActivityForResult(signInIntent, signInRequstCode);
         });
@@ -137,5 +142,15 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void setWeekAndDay() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if (!sharedPreferences.contains("last_visited_week")) {
+            editor.putInt("last_visited_week", 0);
+            editor.putInt("last_visited_dash", 0);
+        }
+        editor.apply();
     }
 }

@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    final String serverPageUrl = "http://192.168.1.7:8080/Graduation_Project/addUserData.php";
+    final String serverPageUrl = LoginActivity.serverIP + "addUserData.php";
 
     Response.Listener<String> serverResponse;
     Response.ErrorListener errorListener;

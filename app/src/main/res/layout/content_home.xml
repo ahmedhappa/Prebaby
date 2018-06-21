@@ -28,6 +28,7 @@
                 android:textSize="22sp" />
 
             <RelativeLayout
+                android:id="@+id/my_week_notifi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -56,9 +57,9 @@
                     android:textColor="#212121" />
 
                 <TextView
-                    android:id="@+id/weekNotifi"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/weekNotifi_num"
+                    android:layout_width="46dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -73,6 +74,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/my_dash_norifi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -101,9 +103,9 @@
                     android:textColor="#212121" />
 
                 <TextView
-                    android:id="@+id/dashNotifi"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/dashNotifi_num"
+                    android:layout_width="46dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -118,6 +120,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/my_qus_notifi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -146,9 +149,9 @@
                     android:textColor="#212121" />
 
                 <TextView
-                    android:id="@+id/questionNotifi"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/questionNotifi_num"
+                    android:layout_width="46dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"

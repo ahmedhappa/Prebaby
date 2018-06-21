@@ -1,5 +1,7 @@
 package com.usama.salamtek;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.usama.salamtek.Dashboard.DashboardFragment;
+import com.usama.salamtek.Interfaces.ChangeMainTabListener;
 import com.usama.salamtek.Tabs.HomeFragment;
 import com.usama.salamtek.Tabs.MoreFragment;
 import com.usama.salamtek.Tabs.MyweekFragment;
@@ -17,7 +20,7 @@ import com.usama.salamtek.Tabs.MyweekFragment;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ChangeMainTabListener {
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
     ///
@@ -26,50 +29,64 @@ public class MainActivity extends AppCompatActivity {
     private CompactCalendarView compactCalendarView;
 
     private boolean isExpanded = false;
+    long elapsedWeeks, elapsedDays;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //setTitle("CompactCalendarViewToolbar");
 
         tabLayout = (TabLayout) findViewById(R.id.tabslayout);
 
+        HomeFragment homeFragment = new HomeFragment();
+        MoreFragment moreFragment = new MoreFragment();
+        MyweekFragment myweekFragment = new MyweekFragment();
+        DashboardFragment dashboardFragment = new DashboardFragment();
+
+        homeFragment.setListener(this);
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
+        fragmentTransaction.replace(R.id.tabFrame, homeFragment);
         fragmentTransaction.commit();
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
                 if (tab.getText().toString().equals(getString(R.string.home))) {
-
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.tabFrame, new HomeFragment());
+                    fragmentTransaction.replace(R.id.tabFrame, homeFragment);
                     fragmentTransaction.commit();
                 }
                 if (tab.getText().toString().equals(getString(R.string.more))) {
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.tabFrame, new MoreFragment());
+                    fragmentTransaction.replace(R.id.tabFrame, moreFragment);
                     fragmentTransaction.commit();
                 }
                 if (tab.getText().toString().equals(getString(R.string.myweek))) {
+                    elapsedWeeks = homeFragment.myElapsedWeeks();
+                    editor.putInt("last_visited_week", (int) elapsedWeeks);
+                    editor.apply();
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.tabFrame, new MyweekFragment());
+                    fragmentTransaction.replace(R.id.tabFrame, myweekFragment);
                     fragmentTransaction.commit();
                 }
                 if (tab.getText().toString().equals(getString(R.string.dashboard))) {
+                    elapsedDays = homeFragment.myElapsedDays();
+                    editor.putInt("last_visited_dash", (int) elapsedDays);
+                    editor.apply();
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.tabFrame, new DashboardFragment());
+                    fragmentTransaction.replace(R.id.tabFrame, dashboardFragment);
                     fragmentTransaction.commit();
                 }
             }
@@ -95,6 +112,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (tvTitle != null) {
             tvTitle.setText(title);
+        }
+    }
+
+    @Override
+    public void onClick(int position) {
+        TabLayout.Tab tab = tabLayout.getTabAt(position);
+        if (tab != null) {
+            tab.select();
         }
     }
 }

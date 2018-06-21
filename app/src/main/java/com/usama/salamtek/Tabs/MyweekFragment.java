@@ -21,6 +21,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.usama.salamtek.LoginActivity;
 import com.usama.salamtek.Model.User;
 import com.usama.salamtek.R;
 
@@ -48,7 +49,7 @@ public class MyweekFragment extends Fragment {
     long elapsedWeeks;
     ImageView weekImage;
 
-    private final String serverPageUrl = "http://192.168.1.7:8080/Graduation_Project/getTipsData.php";
+    private final String serverPageUrl = LoginActivity.serverIP + "getTipsData.php";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -65,7 +66,6 @@ public class MyweekFragment extends Fragment {
                 User user = intent.getParcelableExtra("user_data");
                 Date currentDate = Calendar.getInstance().getTime();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
-
                 try {
                     String mobileDateAsString = simpleDateFormat.format(currentDate);
                     Date mobileDate = simpleDateFormat.parse(mobileDateAsString);
@@ -73,9 +73,8 @@ public class MyweekFragment extends Fragment {
                     long dateDifference = mobileDate.getTime() - childDateOfPregnancy.getTime();
                     long daysInMilli = 1000 * 60 * 60 * 24;
                     long weeksInMilli = daysInMilli * 7;
-                    elapsedWeeks = dateDifference / weeksInMilli;
-                    Log.e("CurrentWeek", elapsedWeeks + "");
-
+                    elapsedWeeks = (dateDifference / weeksInMilli) + 1;
+                    Log.i("CurrentWeek", elapsedWeeks + "");
 
                 } catch (ParseException e) {
                     e.printStackTrace();

@@ -38,7 +38,7 @@ public class EditProfileActivity extends AppCompatActivity {
     Button editProfileBtn;
 
     final int imgCode = 10;
-    final String serverPageUrl = "http://192.168.1.7:8080/Graduation_Project/updateUserData.php";
+    final String serverPageUrl = LoginActivity.serverIP + "updateUserData.php";
 
     Response.Listener<String> serverResponse;
     Response.ErrorListener errorListener;

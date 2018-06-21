@@ -2,15 +2,46 @@ package com.usama.salamtek.Tabs;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.usama.salamtek.Dashboard.DashboardFragment;
+import com.usama.salamtek.Interfaces.ChangeMainTabListener;
+import com.usama.salamtek.LoginActivity;
+import com.usama.salamtek.Model.User;
 import com.usama.salamtek.R;
 import com.usama.salamtek.Reminder.ReminderMainActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 
 /**
@@ -18,22 +49,147 @@ import com.usama.salamtek.Reminder.ReminderMainActivity;
  */
 public class HomeFragment extends Fragment {
     ImageView reminder;
+    User user;
+    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dayTip2;
+    Response.Listener<String> serverResponse;
+    Response.ErrorListener errorListener;
+    StringRequest getBabyInfo;
+    RequestQueue requestQueue;
+    RelativeLayout weekNoti, dashNoti, qusNoti;
+    ChangeMainTabListener changeMainTabListener;
+    long elapsedWeeks,elapsedDays;
+
+    private final String serverPageUrl = LoginActivity.serverIP + "babyInfo.php";
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        daysCount = view.findViewById(R.id.countDay);
+        babySize = view.findViewById(R.id.babySize);
+        babyHeight = view.findViewById(R.id.baby_height);
         reminder = view.findViewById(R.id.newReminder);
-        reminder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ReminderMainActivity.class);
-                startActivity(intent);
-            }
+        weekNoti = view.findViewById(R.id.my_week_notifi);
+        dashNoti = view.findViewById(R.id.my_dash_norifi);
+        qusNoti = view.findViewById(R.id.my_qus_notifi);
+        weekNotiNum = view.findViewById(R.id.weekNotifi_num);
+        dashNotiNum = view.findViewById(R.id.dashNotifi_num);
+        qusNotiNum = view.findViewById(R.id.questionNotifi_num);
+        weekNum = view.findViewById(R.id.weeknum);
+        dayTip1 = view.findViewById(R.id.tip1);
+        dayTip2 = view.findViewById(R.id.tip2);
+
+        reminder.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getActivity(), ReminderMainActivity.class);
+            startActivity(intent);
         });
 
+        if (getActivity().getIntent() != null) {
+            Intent intent = getActivity().getIntent();
+            if (intent.hasExtra("user_data")) {
+                user = intent.getParcelableExtra("user_data");
+                Date currDate = Calendar.getInstance().getTime();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
+                try {
+                    String currentDateAsString = simpleDateFormat.format(currDate);
+                    Date pregnancyDate = simpleDateFormat.parse(user.getChildDateOfBirth());
+                    Date currentDate = simpleDateFormat.parse(currentDateAsString);
+                    long daysInMilli = 1000 * 60 * 60 * 24;
+                    elapsedDays = ((currentDate.getTime() - pregnancyDate.getTime()) / daysInMilli) + 1;
+                    elapsedWeeks = (elapsedDays / 7) + 1;
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(pregnancyDate);
+                    calendar.add(Calendar.MONTH, 9);
+                    pregnancyDate = calendar.getTime();
+                    long difference = pregnancyDate.getTime() - currentDate.getTime();
+                    long elapsedRemainingDays = difference / daysInMilli;
+                    daysCount.setText(String.valueOf(elapsedRemainingDays));
+                    String curWeekNumber = "Week Number : " + String.valueOf(elapsedWeeks);
+                    weekNum.setText(curWeekNumber);
+
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    int lastVisitedWeek = sharedPreferences.getInt("last_visited_week", 0);
+                    int lastVisitedDash = sharedPreferences.getInt("last_visited_dash", 0);
+                    weekNotiNum.setText(String.valueOf((int) elapsedWeeks - lastVisitedWeek));
+                    dashNotiNum.setText(String.valueOf((int) elapsedDays - lastVisitedDash));
+                    qusNotiNum.setText(String.valueOf(((int) elapsedWeeks - lastVisitedWeek) * 15));
+                    weekNoti.setOnClickListener(view1 -> {
+                        changeMainTabListener.onClick(1);
+                        editor.putInt("last_visited_week", (int) elapsedWeeks);
+                        editor.apply();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.tabFrame, new MyweekFragment());
+                        fragmentTransaction.commit();
+
+                    });
+                    dashNoti.setOnClickListener(view1 -> {
+                        changeMainTabListener.onClick(2);
+                        editor.putInt("last_visited_dash", (int) elapsedDays);
+                        editor.apply();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.tabFrame, new DashboardFragment());
+                        fragmentTransaction.commit();
+                    });
+
+
+                    serverResponse = response -> {
+                        Log.i("server response", response);
+                        if (!response.equals("null")) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                JSONObject weekData = jsonObject.getJSONObject("week_data");
+                                babySize.setText(weekData.getString("baby_size"));
+                                babyHeight.setText(weekData.getString("baby_height"));
+                                JSONObject dayData = jsonObject.getJSONObject("day_data");
+                                dayTip1.setText(dayData.getString("tip_e1"));
+                                dayTip2.setText(dayData.getString("tip_e2"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                        requestQueue.stop();
+                    };
+
+                    errorListener = error -> {
+                        error.printStackTrace();
+                        requestQueue.stop();
+                    };
+
+                    getBabyInfo = new StringRequest(Request.Method.POST, serverPageUrl, serverResponse, errorListener) {
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> data = new HashMap<>();
+                            data.put("week_num", String.valueOf(elapsedWeeks));
+                            data.put("day_num", String.valueOf(elapsedDays));
+                            return data;
+                        }
+                    };
+                    requestQueue = Volley.newRequestQueue(getActivity());
+                    requestQueue.add(getBabyInfo);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
         return view;
+    }
+
+    public void setListener(ChangeMainTabListener listener) {
+        this.changeMainTabListener = listener;
+    }
+
+    public long myElapsedDays() {
+        return elapsedDays;
+    }
+
+    public long myElapsedWeeks() {
+        return elapsedWeeks;
     }
 
 }

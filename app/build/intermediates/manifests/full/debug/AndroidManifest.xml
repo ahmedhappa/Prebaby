@@ -49,7 +49,10 @@
         <activity android:name="com.usama.salamtek.RegistrationActivity" />
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" />
         <activity android:name="com.usama.salamtek.EditProfileActivity" />
-        <activity android:name="com.usama.salamtek.Reminder.ReminderMainActivity" />
+        <activity
+            android:name="com.usama.salamtek.Reminder.ReminderMainActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.usama.salamtek.MainActivity" />
         <activity
             android:name="com.usama.salamtek.Reminder.CreateOrEditAlert"
             android:parentActivityName="com.usama.salamtek.Reminder.ReminderMainActivity" >
