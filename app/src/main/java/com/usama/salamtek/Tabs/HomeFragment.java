@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
     RequestQueue requestQueue;
     RelativeLayout weekNoti, dashNoti, qusNoti;
     ChangeMainTabListener changeMainTabListener;
-    long elapsedWeeks,elapsedDays;
+    long elapsedWeeks, elapsedDays;
 
     private final String serverPageUrl = LoginActivity.serverIP + "babyInfo.php";
 

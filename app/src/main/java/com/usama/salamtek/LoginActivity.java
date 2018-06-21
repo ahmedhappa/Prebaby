@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ImageButton gMailLogin;
 
-    public static final String serverIP = "http://192.168.1.2:8080/Graduation_Project/";
+    public static final String serverIP = "http://192.168.1.7:8080/Graduation_Project/";
     private final String serverPageUrl = serverIP + "getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
