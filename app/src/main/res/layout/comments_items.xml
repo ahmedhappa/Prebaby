@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="@drawable/corners"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/my_week_notifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/profileregis"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp"
+            app:layout_anchor="@+id/app_bar"
+            app:layout_anchorGravity="bottom|center" />
+
+        <TextView
+            android:id="@+id/commentuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/profile_pic"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/profile_user"
+            android:text="@string/Username"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/commentdetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/commentuser"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/profile_user"
+            android:text="@string/comment_details"
+            android:textColor="@color/gray_deep"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/commenttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/commentdetails"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_toRightOf="@id/profile_user"
+            android:text="@string/comment_time"
+            android:textColor="@color/gray_light"
+            android:textSize="14dp" />
+    </RelativeLayout>
+</LinearLayout>

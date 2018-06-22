@@ -120,4 +120,14 @@
     <string name="mom_to_be">Mom To Be</string>
     <string name="tip_of_week">Tip Of Week</string>
     <string name="chart">chart</string>
+    <string name="posted_by">Posted by</string>
+    <string name="comments">Comments</string>
+    <string name="posted">Posted by:</string>
+    <string name="description">Description</string>
+    <string name="comment_details">Comment Details</string>
+    <string name="comment_time">Comment Time</string>
+    <string name="enter_your_comment">Enter Your Comment</string>
+    <string name="send">Send</string>
+    <string name="create_post">Create post</string>
+    <string name="post">Post</string>
 </resources>

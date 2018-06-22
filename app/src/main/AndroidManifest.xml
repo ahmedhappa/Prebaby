@@ -37,13 +37,13 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".Tabs.TabsActivity" />
         <activity android:name=".EditProfileActivity" />
-        <activity android:name=".Reminder.ReminderMainActivity"
-            android:parentActivityName=".MainActivity"
-            android:launchMode="singleTop"/>
+        <activity
+            android:name=".Reminder.ReminderMainActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Reminder.CreateOrEditAlert"
-            android:parentActivityName=".Reminder.ReminderMainActivity"
-            >
+            android:parentActivityName=".Reminder.ReminderMainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -78,8 +78,10 @@
             android:readPermission="com.usama.salamtek.READ"
             android:writePermission="com.usama.salamtek.WRITE" />
 
-        <activity android:name=".QuestionsActivity"></activity>
-        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity android:name=".QuestionsActivity" />
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".Community.CommunityMainActivity" />
+        <activity android:name=".Community.CreatePostActivity"></activity>
     </application>
 
 </manifest>

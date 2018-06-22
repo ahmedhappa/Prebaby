@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/firstbg"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.FirstActivity">
 
@@ -19,8 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btnstyle2"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btnstyle3"
         android:clickable="true"
         android:focusable="true"
         android:padding="16dp"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/SignupNow"
-        android:textColor="#0f7e9b"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <View

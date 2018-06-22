@@ -70,6 +70,8 @@
     <color name="grey_primary_dark">#616161</color>
     <color name="blue_grey_primary">#607D8B</color>
     <color name="blue_grey_primary_dark">#455A64</color>
+    <color name="icons_counter_color">#828181</color>
+    <color name="greylight">#979797</color>
 
     <!-- Google Logo Color -->
     <color name="google_blue">#4285F4</color>
@@ -85,5 +87,7 @@
     <color name="app_yellow">#f4b400</color>
     <color name="app_yellow_dark">#f09300</color>
     <color name="app_red">#db4437</color>
+    <color name="send_comment_button_activated">#0097d3</color>
+    <color name="send_comment_button_deactivated">#7fcbe9</color>
 
 </resources>

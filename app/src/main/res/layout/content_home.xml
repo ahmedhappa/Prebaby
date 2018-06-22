@@ -58,7 +58,7 @@
 
                 <TextView
                     android:id="@+id/weekNotifi_num"
-                    android:layout_width="46dp"
+                    android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -69,7 +69,7 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -104,7 +104,7 @@
 
                 <TextView
                     android:id="@+id/dashNotifi_num"
-                    android:layout_width="46dp"
+                    android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -150,7 +150,7 @@
 
                 <TextView
                     android:id="@+id/questionNotifi_num"
-                    android:layout_width="46dp"
+                    android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"

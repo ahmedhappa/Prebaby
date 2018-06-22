@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homedesign"
+    android:background="@drawable/logindesign"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.LoginActivity">
@@ -13,48 +13,45 @@
         android:layout_width="match_parent"
         android:layout_height="190dp" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="28dp"
-        android:layout_marginRight="28dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/ic_person_white_24dp"
-        android:drawablePadding="12dp"
-        android:drawableStart="@drawable/ic_person_white_24dp"
-        android:ems="10"
-        android:hint="@string/UsernameOrEmail"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:padding="8dp"
-        android:textColor="@color/white"
-        android:textColorHint="#ffffff" />
+        app:mtf_image="@drawable/ic_person_white_24dp"
+        app:mtf_labelColor="@color/white">
 
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/UsernameOrEmail"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff" />
 
-    <EditText
-        android:id="@+id/login_pass"
-        android:layout_width="match_parent"
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/ic_lock_white_24dp"
-        android:drawablePadding="12dp"
-        android:drawableStart="@drawable/ic_lock_white_24dp"
-        android:ems="10"
-        android:hint="@string/pass"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:paddingBottom="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingTop="8dp"
-        android:textColor="@color/white"
-        android:textColorHint="#ffffff" />
+        app:mtf_image="@drawable/ic_lock_white_24dp"
+        app:mtf_labelColor="@color/white">
 
-
+        <EditText
+            android:id="@+id/login_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/pass"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff" />
+    </com.github.florent37.materialtextfield.MaterialTextField>
+    
     <TextView
         style="@style/TextAppearance.AppCompat.Body1"
         android:layout_width="wrap_content"
@@ -83,13 +80,13 @@
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/btnstyle"
+        android:background="@drawable/btnstyle3"
         android:clickable="true"
         android:focusable="true"
         android:padding="16dp"
         android:text="@string/login"
         android:textAllCaps="false"
-        android:textColor="#0f7e9b"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="normal" />
 
