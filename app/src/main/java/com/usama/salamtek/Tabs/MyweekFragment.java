@@ -63,23 +63,8 @@ public class MyweekFragment extends Fragment {
         if (getActivity().getIntent() != null) {
             Intent intent = getActivity().getIntent();
             if (intent.hasExtra("user_data")) {
-                User user = intent.getParcelableExtra("user_data");
-                Date currentDate = Calendar.getInstance().getTime();
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
-                try {
-                    String mobileDateAsString = simpleDateFormat.format(currentDate);
-                    Date mobileDate = simpleDateFormat.parse(mobileDateAsString);
-                    Date childDateOfPregnancy = simpleDateFormat.parse(user.getChildDateOfBirth());
-                    long dateDifference = mobileDate.getTime() - childDateOfPregnancy.getTime();
-                    long daysInMilli = 1000 * 60 * 60 * 24;
-                    long weeksInMilli = daysInMilli * 7;
-                    elapsedWeeks = (dateDifference / weeksInMilli) + 1;
-                    Log.i("CurrentWeek", elapsedWeeks + "");
-
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
+                elapsedWeeks = intent.getLongExtra("pregnancyCurrWeek", 1);
+                Log.i("currentWeek", elapsedWeeks + "");
                 serverResponse = response -> {
                     if (!response.equals("null")) {
                         try {

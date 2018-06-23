@@ -50,11 +50,11 @@ import java.util.Map;
 public class HomeFragment extends Fragment {
     ImageView reminder;
     User user;
-    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dayTip2;
-    Response.Listener<String> serverResponse;
-    Response.ErrorListener errorListener;
-    StringRequest getBabyInfo;
-    RequestQueue requestQueue;
+    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1;
+    private Response.Listener<String> serverResponse;
+    private Response.ErrorListener errorListener;
+    private StringRequest getBabyInfo;
+    private RequestQueue requestQueue;
     RelativeLayout weekNoti, dashNoti, qusNoti;
     ChangeMainTabListener changeMainTabListener;
     long elapsedWeeks, elapsedDays;
@@ -77,7 +77,6 @@ public class HomeFragment extends Fragment {
         qusNotiNum = view.findViewById(R.id.questionNotifi_num);
         weekNum = view.findViewById(R.id.weeknum);
         dayTip1 = view.findViewById(R.id.tip1);
-        dayTip2 = view.findViewById(R.id.tip2);
 
         reminder.setOnClickListener(view1 -> {
             Intent intent = new Intent(getActivity(), ReminderMainActivity.class);
@@ -88,22 +87,27 @@ public class HomeFragment extends Fragment {
             Intent intent = getActivity().getIntent();
             if (intent.hasExtra("user_data")) {
                 user = intent.getParcelableExtra("user_data");
-                Date currDate = Calendar.getInstance().getTime();
+                Date currentDate = Calendar.getInstance().getTime();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
                 try {
-                    String currentDateAsString = simpleDateFormat.format(currDate);
-                    Date pregnancyDate = simpleDateFormat.parse(user.getChildDateOfBirth());
-                    Date currentDate = simpleDateFormat.parse(currentDateAsString);
+                    String mobileDateAsString = simpleDateFormat.format(currentDate);
+                    Date mobileDate = simpleDateFormat.parse(mobileDateAsString);
+                    Date childDateOfPregnancy = simpleDateFormat.parse(user.getChildDateOfBirth());
+                    long dateDifference = mobileDate.getTime() - childDateOfPregnancy.getTime();
                     long daysInMilli = 1000 * 60 * 60 * 24;
-                    elapsedDays = ((currentDate.getTime() - pregnancyDate.getTime()) / daysInMilli) + 1;
-                    elapsedWeeks = (elapsedDays / 7) + 1;
+                    elapsedDays = (dateDifference / daysInMilli) + 1;
+                    Log.i("CurrentDay", elapsedDays + "");
+                    long weeksInMilli = daysInMilli * 7;
+                    elapsedWeeks = (dateDifference / weeksInMilli) + 1;
+                    intent.putExtra("pregnancyCurrWeek", elapsedWeeks);
+                    Log.i("CurrentWeek", elapsedWeeks + "");
                     Calendar calendar = Calendar.getInstance();
-                    calendar.setTime(pregnancyDate);
+                    calendar.setTime(childDateOfPregnancy);
                     calendar.add(Calendar.MONTH, 9);
-                    pregnancyDate = calendar.getTime();
-                    long difference = pregnancyDate.getTime() - currentDate.getTime();
-                    long elapsedRemainingDays = difference / daysInMilli;
-                    daysCount.setText(String.valueOf(elapsedRemainingDays));
+                    Date childPregnancyDateAfterNineMonthes = calendar.getTime();
+                    long difference = childPregnancyDateAfterNineMonthes.getTime() - currentDate.getTime();
+                    long elapsedRemainingPregnancyDays = difference / daysInMilli;
+                    daysCount.setText(String.valueOf(elapsedRemainingPregnancyDays));
                     String curWeekNumber = "Week Number : " + String.valueOf(elapsedWeeks);
                     weekNum.setText(curWeekNumber);
 
@@ -145,7 +149,6 @@ public class HomeFragment extends Fragment {
                                 babyHeight.setText(weekData.getString("baby_height"));
                                 JSONObject dayData = jsonObject.getJSONObject("day_data");
                                 dayTip1.setText(dayData.getString("tip_e1"));
-                                dayTip2.setText(dayData.getString("tip_e2"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

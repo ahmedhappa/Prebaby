@@ -1,14 +1,18 @@
 package com.usama.salamtek.Dashboard;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.usama.salamtek.Interfaces.DashboardListener;
 import com.usama.salamtek.R;
 
 import java.util.List;
@@ -22,23 +26,33 @@ public class ChartAdapter extends RecyclerView.Adapter<ChartAdapter.MyViewHolder
     private Context mContext;
     private List<Chart> chartList;
     private LayoutInflater layoutInflater;
+    DashboardListener dashboardListener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public ImageView thumbnail;
+        LinearLayout chartCardParent;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.charttitle);
-            thumbnail = (ImageView) view.findViewById(R.id.chartthumbnail);
+            title = view.findViewById(R.id.charttitle);
+            thumbnail = view.findViewById(R.id.chartthumbnail);
+            chartCardParent = view.findViewById(R.id.chart_card_parent_layout);
+
+            chartCardParent.setOnClickListener(view1 -> myAction(getAdapterPosition()));
+            thumbnail.setOnClickListener(view1 -> myAction(getAdapterPosition()));
         }
+    }
+
+    public void setChartAdapterListener(DashboardListener dashboardListener) {
+        this.dashboardListener = dashboardListener;
     }
 
 
     public ChartAdapter(Context mContext, List<Chart> chartList) {
         this.mContext = mContext;
         this.chartList = chartList;
-        layoutInflater=LayoutInflater.from(mContext);
+        layoutInflater = LayoutInflater.from(mContext);
     }
 
     @Override
@@ -57,5 +71,9 @@ public class ChartAdapter extends RecyclerView.Adapter<ChartAdapter.MyViewHolder
     @Override
     public int getItemCount() {
         return chartList.size();
+    }
+
+    public void myAction(int position) {
+        dashboardListener.onClickDashboardItem(position);
     }
 }

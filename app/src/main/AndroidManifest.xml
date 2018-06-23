@@ -81,7 +81,9 @@
         <activity android:name=".QuestionsActivity" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".Community.CommunityMainActivity" />
-        <activity android:name=".Community.CreatePostActivity"></activity>
+        <activity android:name=".Community.CreatePostActivity" />
+        <activity android:name=".Dashboard.ChartAction" />
+        <activity android:name=".Dashboard.ChartActionVE"></activity>
     </application>
 
 </manifest>

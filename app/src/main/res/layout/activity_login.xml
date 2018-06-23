@@ -28,6 +28,7 @@
             android:hint="@string/UsernameOrEmail"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:text="ahmed"
             android:textColor="@color/black"
             android:textColorHint="#ffffff" />
 
@@ -48,10 +49,11 @@
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:text="123"
             android:textColor="@color/black"
             android:textColorHint="#ffffff" />
     </com.github.florent37.materialtextfield.MaterialTextField>
-    
+
     <TextView
         style="@style/TextAppearance.AppCompat.Body1"
         android:layout_width="wrap_content"

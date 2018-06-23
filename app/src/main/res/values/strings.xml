@@ -130,4 +130,6 @@
     <string name="send">Send</string>
     <string name="create_post">Create post</string>
     <string name="post">Post</string>
+    <string name="tip_of_day">Tip Of Day</string>
+    <string name="tip">tip</string>
 </resources>

@@ -94,6 +94,8 @@
         <activity android:name="com.usama.salamtek.ForgetPasswordActivity" />
         <activity android:name="com.usama.salamtek.Community.CommunityMainActivity" />
         <activity android:name="com.usama.salamtek.Community.CreatePostActivity" />
+        <activity android:name="com.usama.salamtek.Dashboard.ChartAction" />
+        <activity android:name="com.usama.salamtek.Dashboard.ChartActionVE" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

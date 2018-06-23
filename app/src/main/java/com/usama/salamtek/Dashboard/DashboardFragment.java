@@ -2,6 +2,7 @@ package com.usama.salamtek.Dashboard;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.usama.salamtek.Interfaces.DashboardListener;
+import com.usama.salamtek.Model.User;
 import com.usama.salamtek.R;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment implements DashboardListener {
     private RecyclerView recyclerView;
     private ChartAdapter adapter;
     private List<Chart> chartList;
@@ -37,11 +40,12 @@ public class DashboardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         chartList = new ArrayList<>();
         adapter = new ChartAdapter(getActivity().getApplicationContext(), chartList);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity().getApplicationContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(12), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        adapter.setChartAdapterListener(this);
         recyclerView.setAdapter(adapter);
         prepareAlbums();
         return view;
@@ -70,6 +74,39 @@ public class DashboardFragment extends Fragment {
 
 
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onClickDashboardItem(int position) {
+        Intent intent = getActivity().getIntent();
+        if (intent != null && intent.hasExtra("user_data")) {
+            if (position == 0){
+                Intent chartIntent = new Intent(getActivity(), ChartAction.class);
+                chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
+                chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
+                chartIntent.putExtra("type","Water");
+                startActivity(chartIntent);
+            }else if (position == 3){
+                Intent chartIntent = new Intent(getActivity(), ChartAction.class);
+                chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
+                chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
+                chartIntent.putExtra("type","sleep");
+                startActivity(chartIntent);
+            }else if (position == 1){
+                Intent chartIntent = new Intent(getActivity(), ChartActionVE.class);
+                chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
+                chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
+                chartIntent.putExtra("type","vitamins");
+                startActivity(chartIntent);
+            }else if (position == 2){
+                Intent chartIntent = new Intent(getActivity(), ChartActionVE.class);
+                chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
+                chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
+                chartIntent.putExtra("type","food");
+                startActivity(chartIntent);
+            }
+
+        }
     }
 
     /**

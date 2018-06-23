@@ -22,13 +22,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements ChangeMainTabListener {
     private TabLayout tabLayout;
-    private AppBarLayout appBarLayout;
-    ///
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy", /*Locale.getDefault()*/Locale.ENGLISH);
-
-    private CompactCalendarView compactCalendarView;
-
-    private boolean isExpanded = false;
     long elapsedWeeks, elapsedDays;
 
     @Override
@@ -41,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements ChangeMainTabList
         setSupportActionBar(toolbar);
         //setTitle("CompactCalendarViewToolbar");
 
-        tabLayout = (TabLayout) findViewById(R.id.tabslayout);
+        tabLayout = findViewById(R.id.tabslayout);
 
         HomeFragment homeFragment = new HomeFragment();
         MoreFragment moreFragment = new MoreFragment();
