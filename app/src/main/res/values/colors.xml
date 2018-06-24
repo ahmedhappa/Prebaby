@@ -89,5 +89,7 @@
     <color name="app_red">#db4437</color>
     <color name="send_comment_button_activated">#0097d3</color>
     <color name="send_comment_button_deactivated">#7fcbe9</color>
+    <color name="dark_blue">#1b8eb6</color>
+    <color name="pink">#f25170</color>
 
 </resources>

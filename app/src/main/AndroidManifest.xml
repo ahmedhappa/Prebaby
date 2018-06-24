@@ -83,7 +83,8 @@
         <activity android:name=".Community.CommunityMainActivity" />
         <activity android:name=".Community.CreatePostActivity" />
         <activity android:name=".Dashboard.ChartAction" />
-        <activity android:name=".Dashboard.ChartActionVE"></activity>
+        <activity android:name=".Dashboard.ChartActionVE" />
+        <activity android:name=".DailyQuestionsActivity"></activity>
     </application>
 
 </manifest>

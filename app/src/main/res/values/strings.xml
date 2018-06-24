@@ -132,4 +132,9 @@
     <string name="post">Post</string>
     <string name="tip_of_day">Tip Of Day</string>
     <string name="tip">tip</string>
+    <string name="how_much_water_do_you_drink">How much water do you drink ?</string>
+    <string name="how_much_do_you_sleep">How much do you sleep ?</string>
+    <string name="do_you_eat_today">Do you eat today?</string>
+    <string name="do_you_eat_meals">Do you 3 or 4 meals today ?</string>
+    <string name="do_you_take_vitamins">Do you take your daily vitamins?</string>
 </resources>

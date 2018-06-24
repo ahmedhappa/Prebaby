@@ -11,12 +11,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="190dp" />
+        android:layout_height="160dp" />
 
     <com.github.florent37.materialtextfield.MaterialTextField
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:mtf_image="@drawable/ic_person_white_24dp"
+        app:mtf_image="@drawable/girl2"
         app:mtf_labelColor="@color/white">
 
         <EditText
@@ -37,7 +37,7 @@
     <com.github.florent37.materialtextfield.MaterialTextField
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:mtf_image="@drawable/ic_lock_white_24dp"
+        app:mtf_image="@drawable/lock"
         app:mtf_labelColor="@color/white">
 
         <EditText

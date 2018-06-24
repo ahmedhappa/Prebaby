@@ -27,7 +27,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.usama.salamtek.MainActivity"
@@ -96,6 +95,7 @@
         <activity android:name="com.usama.salamtek.Community.CreatePostActivity" />
         <activity android:name="com.usama.salamtek.Dashboard.ChartAction" />
         <activity android:name="com.usama.salamtek.Dashboard.ChartActionVE" />
+        <activity android:name="com.usama.salamtek.DailyQuestionsActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
