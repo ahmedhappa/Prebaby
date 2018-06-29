@@ -9,8 +9,9 @@
     android:focusableInTouchMode="true">
 
     <ScrollView
+        android:id="@+id/my_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
 
         <LinearLayout
@@ -20,7 +21,7 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="280dp">
+                android:layout_height="180dp">
 
                 <ImageView
                     android:id="@+id/postImg"
@@ -44,6 +45,7 @@
             </FrameLayout>
 
             <TextView
+                android:id="@+id/post_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -67,6 +69,7 @@
                     android:textSize="14dp" />
 
                 <TextView
+                    android:id="@+id/posted_by_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
@@ -91,6 +94,7 @@
                 android:layout_marginLeft="16dp" />
 
             <TextView
+                android:id="@+id/post_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
@@ -110,21 +114,6 @@
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/commentsRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    app:layoutManager="LinearLayoutManager" />
-
-                <include layout="@layout/comments_items" />
-            </RelativeLayout>
-
         </LinearLayout>
 
     </ScrollView>
@@ -136,15 +125,24 @@
         android:layout_above="@+id/commentpart"
         android:background="@drawable/top_shadow" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/commentsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_scroll" />
+
 
     <LinearLayout
         android:id="@+id/commentpart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:elevation="4dp"
+        android:background="@color/activity_background"
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/write_comment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -154,16 +152,16 @@
             android:inputType="textMultiLine"
             android:maxHeight="100dp"
             android:minHeight="50dp"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:textColorHint="@color/black" />
 
         <Button
-            android:id="@+id/sendButton"
+            android:id="@+id/create_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_margin="8dp"
             android:background="@drawable/send_comment_button_bg"
-            android:enabled="false"
             android:minWidth="0dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"

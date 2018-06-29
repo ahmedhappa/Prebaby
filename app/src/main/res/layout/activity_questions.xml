@@ -7,69 +7,33 @@
     android:background="@drawable/pregnancy"
     tools:context="com.usama.salamtek.QuestionsActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/question_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:padding="@dimen/activity_horizontal_margin">
+            android:background="@color/colorPrimaryDark"
+            android:visibility="gone"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white">
 
-            <ImageView
-                android:id="@+id/qimg1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                app:srcCompat="@drawable/question2" />
+        </android.support.v7.widget.Toolbar>
 
-            <TextView
-                android:id="@+id/ques1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/qimg1"
-                android:layout_toRightOf="@id/qimg1"
-                android:text="@string/dateperiod"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@id/ques1"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/qimg1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:text="@string/date"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/calendar1"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/calendar"
-                    android:checked="true"
-                    android:padding="6dp"
-                    android:textOff=""
-                    android:textOn="" />
-            </LinearLayout>
-        </RelativeLayout>
-
-        <include layout="@layout/item_dividerw" />
+        <TextView
+            android:id="@+id/diseas_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/result"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -93,38 +57,21 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/qimg2"
                 android:layout_toRightOf="@id/qimg2"
-                android:text="@string/weightBeforeAfter"
+                android:text="@string/what_is_your_weight"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/weightAfter"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_below="@id/ques2"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/qimg2"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/weightBefore"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
-                    android:backgroundTint="@color/white"
-                    android:hint="@string/before"
-                    android:textColorHint="@color/white" />
-
-                <EditText
-                    android:id="@+id/weightAfter"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:hint="@string/after"
-                    android:textColorHint="@color/white" />
-            </LinearLayout>
+                android:layout_toEndOf="@+id/qimg2"
+                android:layout_toRightOf="@+id/qimg2"
+                android:backgroundTint="@color/white"
+                android:hint="@string/number"
+                android:textColorHint="@color/white" />
         </RelativeLayout>
 
         <include layout="@layout/item_dividerw" />
@@ -151,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/qimg3"
                 android:layout_toRightOf="@id/qimg3"
-                android:text="@string/weightBeforeAfter"
+                android:text="@string/do_you_get"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -330,6 +277,7 @@
                 android:textSize="20sp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/blood_pressure"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ques5"
@@ -337,7 +285,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radio_high"
+                    android:id="@+id/pressure_radio_high"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/white"
@@ -346,7 +294,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
-                    android:id="@+id/radio_low"
+                    android:id="@+id/pressure_radio_low"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/white"
@@ -355,7 +303,7 @@
                     android:textSize="16sp" />
 
                 <RadioButton
-                    android:id="@+id/radio_normal"
+                    android:id="@+id/pressure_radio_normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/white"
@@ -514,6 +462,7 @@
                 android:textSize="20sp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/abdominal_pain"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ques7"
@@ -581,6 +530,7 @@
                 android:orientation="horizontal">
 
                 <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/protein_in_urine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ques11"
@@ -760,11 +710,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/percent_of_hemogli"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
-                    android:text="@string/number"
+                    android:hint="@string/number"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
@@ -810,6 +761,7 @@
                 android:textSize="20sp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rh_type"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ques11"
@@ -875,11 +827,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/glucose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
-                    android:text="@string/number"
+                    android:hint="@string/number"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
@@ -934,11 +887,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/ptt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
-                    android:text="@string/number"
+                    android:hint="@string/number"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
@@ -984,6 +938,7 @@
                 android:textSize="20sp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vaginal_discharge"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ques14"
@@ -995,7 +950,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/white"
-                    android:text="@string/coloured"
+                    android:text="Colored"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -1004,7 +959,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/white"
-                    android:text="@string/uncoloured"
+                    android:text="Normal"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
             </RadioGroup>
@@ -1040,6 +995,7 @@
                 android:textSize="20sp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/Bleeding"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ques15"
@@ -1085,6 +1041,13 @@
         </RelativeLayout>
 
         <include layout="@layout/item_dividerw" />
+
+        <Button
+            android:id="@+id/questions_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/apply" />
     </LinearLayout>
 
 

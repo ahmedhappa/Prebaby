@@ -25,12 +25,22 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.firebase.jobdispatcher.Driver;
+import com.firebase.jobdispatcher.FirebaseJobDispatcher;
+import com.firebase.jobdispatcher.GooglePlayDriver;
+import com.firebase.jobdispatcher.Job;
+import com.firebase.jobdispatcher.Lifetime;
+import com.firebase.jobdispatcher.Trigger;
+import com.usama.salamtek.Community.CommunityMainActivity;
+import com.usama.salamtek.DailyQuestionsActivity;
 import com.usama.salamtek.Dashboard.DashboardFragment;
 import com.usama.salamtek.Interfaces.ChangeMainTabListener;
 import com.usama.salamtek.LoginActivity;
 import com.usama.salamtek.Model.User;
+import com.usama.salamtek.QuestionsActivity;
 import com.usama.salamtek.R;
 import com.usama.salamtek.Reminder.ReminderMainActivity;
+import com.usama.salamtek.Services.MyJobServiceNotification;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,12 +60,12 @@ import java.util.Map;
 public class HomeFragment extends Fragment {
     ImageView reminder;
     User user;
-    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1;
+    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, art1, dailyquestionNotifi_num;
     private Response.Listener<String> serverResponse;
     private Response.ErrorListener errorListener;
     private StringRequest getBabyInfo;
     private RequestQueue requestQueue;
-    RelativeLayout weekNoti, dashNoti, qusNoti;
+    RelativeLayout weekNoti, dashNoti, qusNoti, my_dailyqus_notifi;
     ChangeMainTabListener changeMainTabListener;
     long elapsedWeeks, elapsedDays;
 
@@ -77,6 +87,9 @@ public class HomeFragment extends Fragment {
         qusNotiNum = view.findViewById(R.id.questionNotifi_num);
         weekNum = view.findViewById(R.id.weeknum);
         dayTip1 = view.findViewById(R.id.tip1);
+        art1 = view.findViewById(R.id.art1);
+        my_dailyqus_notifi = view.findViewById(R.id.my_dailyqus_notifi);
+        dailyquestionNotifi_num = view.findViewById(R.id.dailyquestionNotifi_num);
 
         reminder.setOnClickListener(view1 -> {
             Intent intent = new Intent(getActivity(), ReminderMainActivity.class);
@@ -87,6 +100,14 @@ public class HomeFragment extends Fragment {
             Intent intent = getActivity().getIntent();
             if (intent.hasExtra("user_data")) {
                 user = intent.getParcelableExtra("user_data");
+
+
+                art1.setOnClickListener(view1 -> {
+                    Intent myIntent = new Intent(getActivity(), CommunityMainActivity.class);
+                    myIntent.putExtra("user_data", user);
+                    startActivity(myIntent);
+                });
+
                 Date currentDate = Calendar.getInstance().getTime();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
                 try {
@@ -111,13 +132,41 @@ public class HomeFragment extends Fragment {
                     String curWeekNumber = "Week Number : " + String.valueOf(elapsedWeeks);
                     weekNum.setText(curWeekNumber);
 
+
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     int lastVisitedWeek = sharedPreferences.getInt("last_visited_week", 0);
                     int lastVisitedDash = sharedPreferences.getInt("last_visited_dash", 0);
+                    int lastVisitedQuestion = sharedPreferences.getInt("last_visited_question", 0);
+                    int lastVisitedDailyQuestion = sharedPreferences.getInt("last_visited_daily_question", 0);
+
+                    int unAnsweredQuestiuns = ((int) elapsedWeeks - lastVisitedQuestion) * 15;
+                    int unAnsweredDailyQuestiuns = (int) elapsedDays - lastVisitedDailyQuestion;
                     weekNotiNum.setText(String.valueOf((int) elapsedWeeks - lastVisitedWeek));
                     dashNotiNum.setText(String.valueOf((int) elapsedDays - lastVisitedDash));
-                    qusNotiNum.setText(String.valueOf(((int) elapsedWeeks - lastVisitedWeek) * 15));
+                    qusNotiNum.setText(String.valueOf(unAnsweredQuestiuns));
+                    dailyquestionNotifi_num.setText(String.valueOf(unAnsweredDailyQuestiuns));
+
+
+                    if (!sharedPreferences.contains("is_job_running")) {
+                        SharedPreferences.Editor notiEditor1 = sharedPreferences.edit();
+                        notiEditor1.putBoolean("is_job_running", true);
+                        notiEditor1.apply();
+                        int numberOfSecounds = 7 * 24 * 60 * 60;
+                        String jobTag = "notification_job";
+                        Driver driver = new GooglePlayDriver(getActivity());
+                        FirebaseJobDispatcher jobDispatcher = new FirebaseJobDispatcher(driver);
+                        Job job = jobDispatcher.newJobBuilder()
+                                .setService(MyJobServiceNotification.class)
+                                .setTag(jobTag)
+                                .setLifetime(Lifetime.FOREVER)
+                                .setRecurring(true)
+                                .setTrigger(Trigger.executionWindow(numberOfSecounds, numberOfSecounds + 10))
+                                .setReplaceCurrent(true)
+                                .build();
+                        jobDispatcher.schedule(job);
+                    }
+
                     weekNoti.setOnClickListener(view1 -> {
                         changeMainTabListener.onClick(1);
                         editor.putInt("last_visited_week", (int) elapsedWeeks);
@@ -136,6 +185,32 @@ public class HomeFragment extends Fragment {
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.tabFrame, new DashboardFragment());
                         fragmentTransaction.commit();
+                    });
+
+                    qusNoti.setOnClickListener(view1 -> {
+                        if (unAnsweredQuestiuns != 0) {
+                            Intent qustionIntent = new Intent(getActivity(), QuestionsActivity.class);
+                            user.setCurrWeight(80 + "");
+                            qustionIntent.putExtra("user_data", user);
+                            qustionIntent.putExtra("week_num", elapsedWeeks);
+                            qustionIntent.putExtra("pregnancyMonth", (int) (elapsedDays / 30) + 1);
+                            qustionIntent.putExtra("weeklyQuestions", true);
+                            startActivity(qustionIntent);
+                        } else {
+                            Toast.makeText(getActivity(), "You Answered all questions please wait for the next week", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    my_dailyqus_notifi.setOnClickListener(view1 -> {
+                        if (unAnsweredDailyQuestiuns != 0) {
+                            Intent dailQqustionIntent = new Intent(getActivity(), DailyQuestionsActivity.class);
+                            dailQqustionIntent.putExtra("user_data", user);
+                            dailQqustionIntent.putExtra("week_num", elapsedWeeks);
+                            dailQqustionIntent.putExtra("day_num", elapsedDays);
+                            startActivity(dailQqustionIntent);
+                        } else {
+                            Toast.makeText(getActivity(), "You Answered all daily questions please wait for the next day", Toast.LENGTH_SHORT).show();
+                        }
                     });
 
 

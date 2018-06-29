@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.security.PrivateKey;
 
 public class User implements Parcelable {
-    private String email, name, age, mobile, pass, country, city, image, childDateOfBirth;
+    private String email, name, age, mobile, pass, country, city, image, childDateOfBirth, currWeight;
     private int id;
 
     public int getId() {
@@ -40,6 +40,7 @@ public class User implements Parcelable {
         image = in.readString();
         id = in.readInt();
         childDateOfBirth = in.readString();
+        currWeight = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -135,5 +136,14 @@ public class User implements Parcelable {
         parcel.writeString(image);
         parcel.writeInt(id);
         parcel.writeString(childDateOfBirth);
+        parcel.writeString(currWeight);
+    }
+
+    public String getCurrWeight() {
+        return currWeight;
+    }
+
+    public void setCurrWeight(String currWeight) {
+        this.currWeight = currWeight;
     }
 }

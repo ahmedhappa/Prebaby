@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ImageButton gMailLogin;
 
-    public static final String serverIP = "http://192.168.1.3:8080/Graduation_Project/";
+    public static final String serverIP = "http://192.168.1.2:8080/Graduation_Project/";
     private final String serverPageUrl = serverIP + "getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
@@ -146,11 +146,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setWeekAndDay() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
         if (!sharedPreferences.contains("last_visited_week")) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("last_visited_week", 0);
             editor.putInt("last_visited_dash", 0);
+            editor.putInt("last_visited_question", 0);
+            editor.putInt("last_visited_daily_question", 0);
+            editor.apply();
         }
-        editor.apply();
     }
 }

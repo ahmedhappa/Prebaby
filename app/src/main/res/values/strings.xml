@@ -137,4 +137,8 @@
     <string name="do_you_eat_today">Do you eat today?</string>
     <string name="do_you_eat_meals">Do you 3 or 4 meals today ?</string>
     <string name="do_you_take_vitamins">Do you take your daily vitamins?</string>
+    <string name="apply">apply</string>
+    <string name="what_is_your_weight">What is your weight</string>
+    <string name="result">Result :</string>
+    <string name="daily_question">Daily Question</string>
 </resources>

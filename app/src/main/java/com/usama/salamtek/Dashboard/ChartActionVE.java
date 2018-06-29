@@ -51,6 +51,7 @@ public class ChartActionVE extends AppCompatActivity {
     User user;
     List<String> weeks;
     List<Double> weekValue;
+    Double average = 0.0;
     Map<Integer, List<Double>> allWeeks;
     String type = "";
 
@@ -89,8 +90,10 @@ public class ChartActionVE extends AppCompatActivity {
                     JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
                     JSONArray daysData = jsonObject.getJSONArray(weeks.get(weeks.size() - 1));
                     for (int i = 0; i < daysData.length(); i++) {
+                        average = average + daysData.getDouble(i);
                         weekValue.add(daysData.getDouble(i));
                     }
+                    average = average / daysData.length();
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonAllObjects = jsonArray.getJSONObject(i);
@@ -111,10 +114,18 @@ public class ChartActionVE extends AppCompatActivity {
                     Chart.setContainerScrollEnabled(false, ContainerScrollType.VERTICAL);
 
                     List<PointValue> values = new ArrayList<>();
-                    float count = 0;
+                    values.add(new PointValue(0, (float) (average * 1)));
                     for (int i = 0; i < weekValue.size(); i++) {
-                        count = (float) (count + weekValue.get(i));
-                        values.add(new PointValue(i, count));
+                        if (i != 0 && weekValue.get(i) == 0 && weekValue.get(i - 1) == 1) {
+                            average--;
+                            values.add(new PointValue(i + 1, (float) (average * 1)));
+                        } else if (i != 0 && weekValue.get(i) == 1 && weekValue.get(i - 1) == 0) {
+                            average++;
+                            values.add(new PointValue(i + 1, (float) (average * 1)));
+                        } else {
+                            values.add(new PointValue(i + 1, (float) (average * 1)));
+                        }
+
                     }
 
                     Line line = new Line(values).setColor(Color.BLUE).setCubic(true);
@@ -187,11 +198,24 @@ public class ChartActionVE extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         weekValue = allWeeks.get(item.getItemId());
-        List<PointValue> values = new ArrayList<>();
-        float count = 0;
+        average = 0.0;
         for (int i = 0; i < weekValue.size(); i++) {
-            count = (float) (count + weekValue.get(i));
-            values.add(new PointValue(i, count));
+            average = average + weekValue.get(i);
+        }
+        average = average / weekValue.size();
+        List<PointValue> values = new ArrayList<>();
+        values.add(new PointValue(0, (float) (average * 1)));
+        for (int i = 0; i < weekValue.size(); i++) {
+            if (i != 0 && weekValue.get(i) == 0 && weekValue.get(i - 1) == 1) {
+                average--;
+                values.add(new PointValue(i + 1, (float) (average * 1)));
+            } else if (i != 0 && weekValue.get(i) == 1 && weekValue.get(i - 1) == 0) {
+                average++;
+                values.add(new PointValue(i + 1, (float) (average * 1)));
+            } else {
+                values.add(new PointValue(i + 1, (float) (average * 1)));
+            }
+
         }
         Line line = new Line(values).setColor(Color.BLUE).setCubic(true);
         line.setShape(shape);

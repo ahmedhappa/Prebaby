@@ -27,6 +27,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.usama.salamtek.MainActivity"
@@ -38,13 +39,14 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name="com.usama.salamtek.FirstActivity" >
+        </activity>
+        <activity android:name="com.usama.salamtek.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.usama.salamtek.LoginActivity" />
         <activity android:name="com.usama.salamtek.RegistrationActivity" />
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" />
         <activity android:name="com.usama.salamtek.EditProfileActivity" />
@@ -96,6 +98,28 @@
         <activity android:name="com.usama.salamtek.Dashboard.ChartAction" />
         <activity android:name="com.usama.salamtek.Dashboard.ChartActionVE" />
         <activity android:name="com.usama.salamtek.DailyQuestionsActivity" />
+        <activity android:name="com.usama.salamtek.Community.PostDetailes" />
+
+        <service
+            android:name="com.usama.salamtek.Services.MyJobServiceNotification"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+        <!--
+             Receives GooglePlay execution requests and forwards them to the
+             appropriate internal service.
+        -->
+        <service
+            android:name="com.firebase.jobdispatcher.GooglePlayReceiver"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
