@@ -33,7 +33,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     ImageView profilePic;
     ToggleButton editProPic;
-    EditText name, mobile, email, country, city, age, hight, wight;
+    EditText name, mobile, email, country, city, age;
     User user;
     Button editProfileBtn;
 
@@ -56,8 +56,6 @@ public class EditProfileActivity extends AppCompatActivity {
         country = findViewById(R.id.edit_country);
         city = findViewById(R.id.edit_city);
         age = findViewById(R.id.edit_age);
-        hight = findViewById(R.id.edit_height);
-        wight = findViewById(R.id.edit_weight);
         profilePic = findViewById(R.id.profile_pic_edit);
         editProPic = findViewById(R.id.editpic);
         editProfileBtn = findViewById(R.id.edit_pro_btn);
@@ -72,9 +70,6 @@ public class EditProfileActivity extends AppCompatActivity {
                 country.setText(user.getCountry());
                 city.setText(user.getCity());
                 age.setText(user.getAge());
-                hight.setText(getString(R.string.not_available));
-                wight.setText(getString(R.string.not_available));
-
                 byte[] arr = Base64.decode(user.getImage(), Base64.DEFAULT);
                 profilePic.setImageBitmap(BitmapFactory.decodeByteArray(arr, 0, arr.length));
 

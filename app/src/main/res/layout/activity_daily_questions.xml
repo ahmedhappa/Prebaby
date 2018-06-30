@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pregnancy"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.DailyQuestionsActivity">
 
@@ -24,7 +25,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/corners"
         android:clickable="true"
         android:padding="@dimen/activity_horizontal_margin">
 
@@ -45,7 +45,7 @@
             android:layout_toRightOf="@id/dailyQ1img"
             android:text="@string/how_much_water_do_you_drink"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <EditText
@@ -56,10 +56,12 @@
             android:layout_marginLeft="8dp"
             android:layout_toEndOf="@id/dailyQ1img"
             android:layout_toRightOf="@id/dailyQ1img"
-            android:backgroundTint="@color/softblue"
-            android:textColor="@color/black" />
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
+
+    <include layout="@layout/item_dividerw" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -67,7 +69,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/corners"
         android:clickable="true"
         android:padding="@dimen/activity_horizontal_margin">
 
@@ -88,7 +89,7 @@
             android:layout_toRightOf="@id/dailyQ2img"
             android:text="@string/how_much_do_you_sleep"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <EditText
@@ -99,10 +100,12 @@
             android:layout_marginLeft="8dp"
             android:layout_toEndOf="@id/dailyQ2img"
             android:layout_toRightOf="@id/dailyQ2img"
-            android:backgroundTint="@color/softblue"
-            android:textColor="@color/black" />
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
+
+    <include layout="@layout/item_dividerw" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -110,7 +113,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/corners"
         android:clickable="true"
         android:padding="@dimen/activity_horizontal_margin">
 
@@ -131,7 +133,7 @@
             android:layout_toRightOf="@id/dailyQ3"
             android:text="@string/do_you_eat_meals"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -154,9 +156,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="8dp"
-                    android:buttonTint="@color/pink"
+                    android:buttonTint="@color/white"
                     android:text="@string/yes"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -164,14 +166,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:buttonTint="@color/pink"
+                    android:buttonTint="@color/white"
                     android:text="@string/no"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </RadioGroup>
         </LinearLayout>
     </RelativeLayout>
+
+    <include layout="@layout/item_dividerw" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -179,7 +183,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/corners"
         android:clickable="true"
         android:padding="@dimen/activity_horizontal_margin">
 
@@ -200,7 +203,7 @@
             android:layout_toRightOf="@id/dailyQ4img"
             android:text="@string/do_you_take_vitamins"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -223,9 +226,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="8dp"
-                    android:buttonTint="@color/pink"
+                    android:buttonTint="@color/white"
                     android:text="@string/yes"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <RadioButton
@@ -233,20 +236,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:buttonTint="@color/pink"
+                    android:buttonTint="@color/white"
                     android:text="@string/no"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </RadioGroup>
         </LinearLayout>
     </RelativeLayout>
 
+    <include layout="@layout/item_dividerw" />
+
     <Button
         android:id="@+id/daily_qus_apply_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:text="Apply" />
+        android:background="@drawable/btnstyle"
+        android:fontFamily="@font/electrolize"
+        android:padding="16dp"
+        android:text="@string/apply"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
 </LinearLayout>

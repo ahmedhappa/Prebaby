@@ -3,8 +3,10 @@ package com.usama.salamtek.Reminder;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
@@ -16,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import com.usama.salamtek.MainActivity;
 import com.usama.salamtek.R;
 
 public class CreateOrEditNote extends AppCompatActivity {
@@ -48,6 +51,7 @@ public class CreateOrEditNote extends AppCompatActivity {
             setActionBarTitle(actionBar, this.getString(R.string.action_bar_create_note));
         }
     }
+
     @Override
     public void onBackPressed() {
         promptSave();

@@ -20,7 +20,13 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplachActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
@@ -29,13 +35,7 @@
         <activity android:name=".FirstActivity">
 
         </activity>
-        <activity android:name=".LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".Tabs.TabsActivity" />
         <activity android:name=".EditProfileActivity" />
@@ -87,11 +87,14 @@
         <activity android:name=".Dashboard.ChartAction" />
         <activity android:name=".Dashboard.ChartActionVE" />
         <activity android:name=".DailyQuestionsActivity"></activity>
+        <activity android:name=".TakeTour.TakeTourActivity"></activity>
         <activity android:name=".Community.PostDetailes"></activity>
-        <service android:name=".Services.MyJobServiceNotification"
+
+        <service
+            android:name=".Services.MyJobServiceNotification"
             android:exported="false">
             <intent-filter>
-            <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
             </intent-filter>
         </service>
     </application>

@@ -58,7 +58,7 @@
 
                 <TextView
                     android:id="@+id/weekNotifi_num"
-                    android:layout_width="32dp"
+                    android:layout_width="70dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -71,6 +71,8 @@
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold" />
+
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -104,7 +106,7 @@
 
                 <TextView
                     android:id="@+id/dashNotifi_num"
-                    android:layout_width="32dp"
+                    android:layout_width="70dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -144,13 +146,13 @@
                     android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="8dp"
                     android:layout_toRightOf="@id/qImg"
-                    android:text="@string/question"
+                    android:text="@string/weekly_questions"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#212121" />
 
                 <TextView
                     android:id="@+id/questionNotifi_num"
-                    android:layout_width="32dp"
+                    android:layout_width="70dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -163,6 +165,8 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
+
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -190,9 +194,9 @@
                     android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="8dp"
                     android:layout_toRightOf="@id/dailyquestionImg"
-                    android:text="@string/daily_question"
+                    android:text="@string/daily_questions"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#118dad" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/dailyquestionNotifi_num"
@@ -211,101 +215,68 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/corners"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/audiowide"
-                android:text="@string/calendar"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/weeknum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/weeknumber"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/weeknum"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginRight="15dp"
-                    android:src="@drawable/calendar" />
-            </RelativeLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/corners"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/audiowide"
-                android:text="@string/notereminder"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/corners"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/createnote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="8dp"
-                    android:text="@string/create"
-                    android:textSize="18sp" />
+                    android:fontFamily="@font/audiowide"
+                    android:text="@string/reminder"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="22sp" />
 
                 <ImageView
                     android:id="@+id/newReminder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/createnote"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center"
                     android:src="@drawable/reminder" />
-            </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/corners"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/audiowide"
+                    android:text="@string/community"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/communityIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/network" />
+            </LinearLayout>
+
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -331,6 +302,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tip"
+                android:padding="8dp"
                 android:textSize="18sp" />
 
 

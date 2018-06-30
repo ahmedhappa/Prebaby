@@ -31,8 +31,8 @@
                 android:id="@+id/babyParagraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_margin="4dp"
+                android:padding="8dp"
                 android:text="@string/paragraph"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -45,6 +45,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/softblue" />
 
         <LinearLayout
@@ -67,8 +68,8 @@
                 android:id="@+id/MomParagraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_margin="4dp"
+                android:padding="8dp"
                 android:text="@string/paragraph"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -80,6 +81,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/softblue" />
 
         <LinearLayout
@@ -102,13 +104,16 @@
                 android:id="@+id/tipParagraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_margin="4dp"
+                android:padding="8dp"
                 android:text="@string/paragraph"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

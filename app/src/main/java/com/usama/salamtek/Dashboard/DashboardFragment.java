@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -38,6 +40,28 @@ public class DashboardFragment extends Fragment implements DashboardListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
+        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = true;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.setTitle("PreBaby");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbarLayout.setTitle(" ");//carefull there should a space between double quote otherwise it wont work
+                    isShow = false;
+                }
+            }
+        });
+
         chartList = new ArrayList<>();
         adapter = new ChartAdapter(getActivity().getApplicationContext(), chartList);
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -80,29 +104,29 @@ public class DashboardFragment extends Fragment implements DashboardListener {
     public void onClickDashboardItem(int position) {
         Intent intent = getActivity().getIntent();
         if (intent != null && intent.hasExtra("user_data")) {
-            if (position == 0){
+            if (position == 0) {
                 Intent chartIntent = new Intent(getActivity(), ChartAction.class);
                 chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
                 chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
-                chartIntent.putExtra("type","Water");
+                chartIntent.putExtra("type", "Water");
                 startActivity(chartIntent);
-            }else if (position == 3){
+            } else if (position == 3) {
                 Intent chartIntent = new Intent(getActivity(), ChartAction.class);
                 chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
                 chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
-                chartIntent.putExtra("type","sleep");
+                chartIntent.putExtra("type", "sleep");
                 startActivity(chartIntent);
-            }else if (position == 1){
+            } else if (position == 1) {
                 Intent chartIntent = new Intent(getActivity(), ChartActionVE.class);
                 chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
                 chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
-                chartIntent.putExtra("type","vitamins");
+                chartIntent.putExtra("type", "vitamins");
                 startActivity(chartIntent);
-            }else if (position == 2){
+            } else if (position == 2) {
                 Intent chartIntent = new Intent(getActivity(), ChartActionVE.class);
                 chartIntent.putExtra("pregnancyCurrWeek", intent.getLongExtra("pregnancyCurrWeek", 0));
                 chartIntent.putExtra("user_data", (User) intent.getParcelableExtra("user_data"));
-                chartIntent.putExtra("type","food");
+                chartIntent.putExtra("type", "food");
                 startActivity(chartIntent);
             }
 

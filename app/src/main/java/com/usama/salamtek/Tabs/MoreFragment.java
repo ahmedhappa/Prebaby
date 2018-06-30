@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -25,7 +27,7 @@ import com.usama.salamtek.R;
 public class MoreFragment extends Fragment {
 
 
-    TextView name, mobile, email, country, city, age, hight, wight, docAppointment;
+    TextView name, mobile, email, country, city, age;
     ImageView proPic;
     Button editPro;
     User user;
@@ -41,11 +43,29 @@ public class MoreFragment extends Fragment {
         country = view.findViewById(R.id.tvNumber5);
         city = view.findViewById(R.id.textView);
         age = view.findViewById(R.id.age);
-        hight = view.findViewById(R.id.height);
-        wight = view.findViewById(R.id.weight);
-        docAppointment = view.findViewById(R.id.apppintment);
         proPic = view.findViewById(R.id.profile_pic);
         editPro = view.findViewById(R.id.edit_profile);
+
+        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
+        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = true;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.setTitle("PreBaby");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbarLayout.setTitle(" ");//carefull there should a space between double quote otherwise it wont work
+                    isShow = false;
+                }
+            }
+        });
 
         Intent intent = getActivity().getIntent();
         if (intent.hasExtra("user_data")) {
@@ -56,9 +76,6 @@ public class MoreFragment extends Fragment {
             country.setText(user.getCountry());
             city.setText(user.getCity());
             age.setText(user.getAge());
-            hight.setText(getString(R.string.not_available));
-            wight.setText(getString(R.string.not_available));
-            docAppointment.setText(getString(R.string.not_available));
 
             byte[] arr = Base64.decode(user.getImage(), Base64.DEFAULT);
             proPic.setImageBitmap(BitmapFactory.decodeByteArray(arr, 0, arr.length));

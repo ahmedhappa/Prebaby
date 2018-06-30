@@ -2,13 +2,17 @@
 <resources>
     <color name="colorPrimary">#c2214f</color>
     <color name="colorPrimaryDark">#0f7e9b</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorGray">#eeeeee</color>
+    <color name="colorAccent">#f5758e</color>
+
 
     <color name="softpink">#f9acbb</color>
+    <color name="softpink2">#f5758e</color>
     <color name="softblue">#92d7ef</color>
+    <color name="softblue2">#5fc4e7</color>
     <color name="softcyan">#a2eae0</color>
+    <color name="darkcyan">#118dad</color>
     <color name="Lightgrayish">#e4e0dc</color>
+    <color name="colorGray">#eeeeee</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>

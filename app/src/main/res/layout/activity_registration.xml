@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/regis"
+    android:background="@drawable/loginregistration"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.RegistrationActivity">
 
@@ -22,6 +22,17 @@
             app:civ_border_color="@color/white"
             app:civ_border_width="1dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:fontFamily="@font/electrolize"
+            android:gravity="center"
+            android:text="@string/profile_pic"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
@@ -33,9 +44,11 @@
             android:drawableLeft="@drawable/ic_person_white_24dp"
             android:drawablePadding="12dp"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/Username"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
 
         <EditText
@@ -44,12 +57,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/mailiconp"
             android:drawablePadding="12dp"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/email"
             android:inputType="text"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
 
         <EditText
@@ -58,12 +74,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/birth"
             android:drawablePadding="12dp"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/age"
+            android:inputType="number"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
 
         <EditText
@@ -72,13 +92,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/smartphone"
             android:drawablePadding="12dp"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/mobile"
             android:inputType="numberDecimal"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
 
         <EditText
@@ -87,13 +110,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/ic_lock_white_24dp"
             android:drawablePadding="12dp"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
 
         <EditText
@@ -102,28 +128,62 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/ic_lock_white_24dp"
             android:drawablePadding="12dp"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/confirmPass"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
 
-        <EditText
-            android:id="@+id/country"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/country"
-            android:drawablePadding="12dp"
-            android:ems="10"
-            android:hint="@string/country"
-            android:maxLines="1"
-            android:textColorHint="#ffffff" />
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/electrolize"
+            android:text="Region"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/countrylayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/country"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/country"
+                android:fontFamily="@font/electrolize"
+                android:hint="@string/country"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/country_spinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:entries="@array/countries_array"
+                android:prompt="@string/country_prompt"></Spinner>
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/city"
@@ -131,20 +191,93 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/city"
             android:drawablePadding="12dp"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/city"
             android:maxLines="1"
+            android:textColor="@color/white"
             android:textColorHint="#ffffff" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@color/white" />
+
+        <EditText
+            android:id="@+id/weightuser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/weight2"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/electrolize"
+            android:hint="Weight"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/electrolize"
+            android:text="@string/date_peroid"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/dataShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electrolize"
+                android:text="@string/date"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/calendarregist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:onClick="setDate"
+                android:src="@drawable/calendar" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white" />
 
 
         <Button
             android:id="@+id/regs_bun"
             style="@style/Base.TextAppearance.AppCompat.Body1"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/city"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
@@ -153,12 +286,16 @@
             android:background="@drawable/btnstyle3"
             android:clickable="true"
             android:focusable="true"
-            android:padding="16dp"
+            android:fontFamily="@font/electrolize"
             android:text="@string/SignUp"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="18sp"
-            android:textStyle="normal" />
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
 
     </LinearLayout>
 

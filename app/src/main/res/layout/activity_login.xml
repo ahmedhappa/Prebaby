@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/logindesign"
+    android:background="@drawable/loginregistration"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.LoginActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="160dp" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="160dp"
+        android:src="@drawable/logo" />
 
     <com.github.florent37.materialtextfield.MaterialTextField
         android:layout_width="300dp"
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/UsernameOrEmail"
             android:inputType="textEmailAddress"
             android:maxLines="1"
@@ -46,6 +48,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             android:ems="10"
+            android:fontFamily="@font/electrolize"
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:maxLines="1"
@@ -54,43 +57,32 @@
             android:textColorHint="#ffffff" />
     </com.github.florent37.materialtextfield.MaterialTextField>
 
-    <TextView
-        style="@style/TextAppearance.AppCompat.Body1"
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/forget"
-        android:textColor="#fff"
-        android:textSize="16sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginRight="115dp"
-        android:background="@color/white" />
+        android:layout_gravity="left"
+        android:layout_marginLeft="40dp"
+        android:buttonTint="@color/white"
+        android:text="@string/keep_sign_in"
+        android:textColor="@color/white" />
 
 
     <Button
         android:id="@+id/login_btn"
         style="@style/Base.TextAppearance.AppCompat.Body1"
-        android:layout_width="200dp"
+        android:layout_width="140dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/btnstyle3"
         android:clickable="true"
         android:focusable="true"
-        android:padding="16dp"
+        android:fontFamily="@font/electrolize"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="normal" />
+        android:textStyle="normal|bold" />
 
 
     <TextView
@@ -99,9 +91,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/electrolize"
         android:text="@string/loginwith"
         android:textColor="#fff"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
 
     <ImageButton
@@ -110,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/gplus" />
+        android:src="@drawable/googleplus" />
 
 
 </LinearLayout>

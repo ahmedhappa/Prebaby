@@ -16,12 +16,19 @@
 
     </FrameLayout>
 
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@+id/tabslayout"
+        android:background="@drawable/top_shadow" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tabslayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:tabBackground="@color/colorPrimaryDark"
+        app:tabBackground="@color/white"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/white"
         app:tabMode="fixed"
@@ -32,22 +39,22 @@
         <android.support.design.widget.TabItem
             android:id="@+id/tab1"
             style="@style/tab_item"
-            android:text="@string/home" />
+            android:icon="@drawable/ic_home" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/tab2"
             style="@style/tab_item"
-            android:text="@string/myweek" />
+            android:icon="@drawable/ic_week" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/tab3"
             style="@style/tab_item"
-            android:text="@string/dashboard" />
+            android:icon="@drawable/ic_dashboard" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/tab4"
             style="@style/tab_item"
-            android:text="@string/more" />
+            android:icon="@drawable/ic_user" />
 
     </android.support.design.widget.TabLayout>
 

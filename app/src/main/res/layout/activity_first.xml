@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/firstbg"
+    android:background="@drawable/finalfirstdesign"
     android:orientation="vertical"
     tools:context="com.usama.salamtek.FirstActivity">
 
@@ -15,12 +15,13 @@
         android:src="@drawable/logo" />
 
     <Button
+        android:id="@+id/tour"
         style="@style/Base.TextAppearance.AppCompat.Body1"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="110dp"
         android:background="@drawable/btnstyle3"
         android:clickable="true"
         android:focusable="true"
@@ -29,12 +30,13 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="normal" />
+        android:fontFamily="@font/electrolize"
+        android:textStyle="normal|bold"  />
 
     <Button
         android:id="@+id/go_to_login_btn"
         style="@style/Base.TextAppearance.AppCompat.Body1"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
@@ -44,25 +46,35 @@
         android:focusable="true"
         android:padding="16dp"
         android:text="@string/login"
+        android:fontFamily="@font/electrolize"
         android:textAllCaps="false"
         android:textColor="#0f7e9b"
         android:textSize="18sp"
-        android:textStyle="normal" />
+        android:textStyle="normal|bold"/>
 
-    <TextView
-        android:id="@+id/go_to_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/SignupNow"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
-    <View
-        android:layout_width="100dp"
-        android:layout_height="1.5dp"
-        android:layout_gravity="center"
-        android:background="@color/white" />
+        <TextView
+            android:id="@+id/go_to_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/SignupNow"
+            android:fontFamily="@font/electrolize"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="85dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="@color/white" />
+    </LinearLayout>
 
 
 </LinearLayout>

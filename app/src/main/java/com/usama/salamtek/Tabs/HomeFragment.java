@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -60,7 +62,7 @@ import java.util.Map;
 public class HomeFragment extends Fragment {
     ImageView reminder;
     User user;
-    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, art1, dailyquestionNotifi_num;
+    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dailyquestionNotifi_num;
     private Response.Listener<String> serverResponse;
     private Response.ErrorListener errorListener;
     private StringRequest getBabyInfo;
@@ -68,6 +70,7 @@ public class HomeFragment extends Fragment {
     RelativeLayout weekNoti, dashNoti, qusNoti, my_dailyqus_notifi;
     ChangeMainTabListener changeMainTabListener;
     long elapsedWeeks, elapsedDays;
+    ImageView communityIcon;
 
     private final String serverPageUrl = LoginActivity.serverIP + "babyInfo.php";
 
@@ -87,9 +90,31 @@ public class HomeFragment extends Fragment {
         qusNotiNum = view.findViewById(R.id.questionNotifi_num);
         weekNum = view.findViewById(R.id.weeknum);
         dayTip1 = view.findViewById(R.id.tip1);
-        art1 = view.findViewById(R.id.art1);
+        communityIcon = view.findViewById(R.id.communityIcon);
         my_dailyqus_notifi = view.findViewById(R.id.my_dailyqus_notifi);
         dailyquestionNotifi_num = view.findViewById(R.id.dailyquestionNotifi_num);
+
+
+        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
+        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = true;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.setTitle("PreBaby");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbarLayout.setTitle(" ");//carefull there should a space between double quote otherwise it wont work
+                    isShow = false;
+                }
+            }
+        });
 
         reminder.setOnClickListener(view1 -> {
             Intent intent = new Intent(getActivity(), ReminderMainActivity.class);
@@ -102,7 +127,7 @@ public class HomeFragment extends Fragment {
                 user = intent.getParcelableExtra("user_data");
 
 
-                art1.setOnClickListener(view1 -> {
+                communityIcon.setOnClickListener(view1 -> {
                     Intent myIntent = new Intent(getActivity(), CommunityMainActivity.class);
                     myIntent.putExtra("user_data", user);
                     startActivity(myIntent);

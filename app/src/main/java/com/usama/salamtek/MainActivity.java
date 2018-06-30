@@ -1,10 +1,13 @@
 package com.usama.salamtek;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
 import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -32,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements ChangeMainTabList
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //setTitle("CompactCalendarViewToolbar");
 
         tabLayout = findViewById(R.id.tabslayout);
 
@@ -46,25 +48,30 @@ public class MainActivity extends AppCompatActivity implements ChangeMainTabList
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.tabFrame, homeFragment);
         fragmentTransaction.commit();
+        TabLayout.Tab tab = tabLayout.getTabAt(0);
+        tab.setIcon(R.drawable.ic_home2);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getText().toString().equals(getString(R.string.home))) {
+                if (tab.getPosition() == 0) {
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, homeFragment);
                     fragmentTransaction.commit();
+                    tab.setIcon(R.drawable.ic_home2);
                 }
-                if (tab.getText().toString().equals(getString(R.string.more))) {
+                if (tab.getPosition() == 3) {
                     android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, moreFragment);
                     fragmentTransaction.commit();
+                    tab.setIcon(R.drawable.ic_user2);
                 }
-                if (tab.getText().toString().equals(getString(R.string.myweek))) {
+                if (tab.getPosition() == 1) {
                     elapsedWeeks = homeFragment.myElapsedWeeks();
                     editor.putInt("last_visited_week", (int) elapsedWeeks);
                     editor.apply();
@@ -72,8 +79,9 @@ public class MainActivity extends AppCompatActivity implements ChangeMainTabList
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, myweekFragment);
                     fragmentTransaction.commit();
+                    tab.setIcon(R.drawable.ic_week2);
                 }
-                if (tab.getText().toString().equals(getString(R.string.dashboard))) {
+                if (tab.getPosition() == 2) {
                     elapsedDays = homeFragment.myElapsedDays();
                     editor.putInt("last_visited_dash", (int) elapsedDays);
                     editor.apply();
@@ -81,11 +89,21 @@ public class MainActivity extends AppCompatActivity implements ChangeMainTabList
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.tabFrame, dashboardFragment);
                     fragmentTransaction.commit();
+                    tab.setIcon(R.drawable.ic_dashboard2);
                 }
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    tab.setIcon(R.drawable.ic_home);
+                } else if (tab.getPosition() == 1) {
+                    tab.setIcon(R.drawable.ic_week);
+                } else if (tab.getPosition() == 2) {
+                    tab.setIcon(R.drawable.ic_dashboard);
+                } else if (tab.getPosition() == 3) {
+                    tab.setIcon(R.drawable.ic_user);
+                }
 
             }
 
