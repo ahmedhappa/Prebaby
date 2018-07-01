@@ -86,6 +86,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         Intent intent1 = new Intent(this, MainActivity.class);
                         intent1.putExtra("user_data", user);
                         startActivity(intent1);
+                        finish();
                     } else {
                         Toast.makeText(this, "There is an error pleas try again later", Toast.LENGTH_SHORT).show();
                     }

@@ -30,7 +30,7 @@
             android:hint="@string/UsernameOrEmail"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:text="ahmed"
+            android:text="mai"
             android:textColor="@color/black"
             android:textColorHint="#ffffff" />
 
@@ -58,10 +58,13 @@
     </com.github.florent37.materialtextfield.MaterialTextField>
 
     <CheckBox
+        android:id="@+id/keep_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
         android:buttonTint="@color/white"
         android:text="@string/keep_sign_in"
         android:textColor="@color/white" />

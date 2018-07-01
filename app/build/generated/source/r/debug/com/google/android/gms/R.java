@@ -59,16 +59,16 @@ public final class R {
         public static final int dark = 0x7f0a0081;
         public static final int email = 0x7f0a00a3;
         public static final int icon_only = 0x7f0a00c3;
-        public static final int light = 0x7f0a00d3;
-        public static final int none = 0x7f0a00f7;
-        public static final int normal = 0x7f0a00f8;
-        public static final int radio = 0x7f0a013a;
-        public static final int standard = 0x7f0a0175;
-        public static final int text = 0x7f0a0184;
-        public static final int text2 = 0x7f0a0185;
-        public static final int toolbar = 0x7f0a0198;
-        public static final int wide = 0x7f0a01b8;
-        public static final int wrap_content = 0x7f0a01bb;
+        public static final int light = 0x7f0a00d4;
+        public static final int none = 0x7f0a00f9;
+        public static final int normal = 0x7f0a00fa;
+        public static final int radio = 0x7f0a013c;
+        public static final int standard = 0x7f0a0177;
+        public static final int text = 0x7f0a0186;
+        public static final int text2 = 0x7f0a0187;
+        public static final int toolbar = 0x7f0a019a;
+        public static final int wide = 0x7f0a01bb;
+        public static final int wrap_content = 0x7f0a01be;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0b0007;

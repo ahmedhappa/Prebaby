@@ -39,10 +39,7 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".Tabs.TabsActivity" />
         <activity android:name=".EditProfileActivity" />
-        <activity
-            android:name=".Reminder.ReminderMainActivity"
-            android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Reminder.ReminderMainActivity"/>
         <activity
             android:name=".Reminder.CreateOrEditAlert"
             android:parentActivityName=".Reminder.ReminderMainActivity">

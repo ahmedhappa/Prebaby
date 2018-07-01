@@ -2,8 +2,10 @@ package com.usama.salamtek.Tabs;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.usama.salamtek.EditProfileActivity;
+import com.usama.salamtek.LoginActivity;
 import com.usama.salamtek.Model.User;
 import com.usama.salamtek.R;
 
@@ -29,7 +32,7 @@ public class MoreFragment extends Fragment {
 
     TextView name, mobile, email, country, city, age;
     ImageView proPic;
-    Button editPro;
+    Button editPro, logOut;
     User user;
 
     @Override
@@ -45,6 +48,17 @@ public class MoreFragment extends Fragment {
         age = view.findViewById(R.id.age);
         proPic = view.findViewById(R.id.profile_pic);
         editPro = view.findViewById(R.id.edit_profile);
+        logOut = view.findViewById(R.id.log_out);
+
+        logOut.setOnClickListener(v -> {
+            SharedPreferences keepShared = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            SharedPreferences.Editor editor = keepShared.edit();
+            editor.putBoolean("keep_login", false);
+            editor.apply();
+            Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent2);
+            getActivity().finish();
+        });
 
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
         AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);

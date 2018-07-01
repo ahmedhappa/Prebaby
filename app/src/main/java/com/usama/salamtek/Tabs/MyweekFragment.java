@@ -1,6 +1,7 @@
 package com.usama.salamtek.Tabs;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -52,6 +53,7 @@ public class MyweekFragment extends Fragment {
     ImageView weekImage;
 
     private final String serverPageUrl = LoginActivity.serverIP + "getTipsData.php";
+    ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -61,6 +63,10 @@ public class MyweekFragment extends Fragment {
         momToBe = view.findViewById(R.id.MomParagraph);
         tipForWeek = view.findViewById(R.id.tipParagraph);
         weekImage = view.findViewById(R.id.myweek_pic);
+
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Loading ... ");
+        progressDialog.show();
 
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
         AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
@@ -89,6 +95,7 @@ public class MyweekFragment extends Fragment {
                 elapsedWeeks = intent.getLongExtra("pregnancyCurrWeek", 1);
                 Log.i("currentWeek", elapsedWeeks + "");
                 serverResponse = response -> {
+                    progressDialog.dismiss();
                     if (!response.equals("null")) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);

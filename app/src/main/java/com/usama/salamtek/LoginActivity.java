@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,12 +41,15 @@ public class LoginActivity extends AppCompatActivity {
     TextView userName, pass;
     Button login;
     ImageButton gMailLogin;
+    CheckBox keepLogin;
 
-    public static final String serverIP = "http://192.168.1.4:8080/Graduation_Project/";
+    public static final String serverIP = "http://192.168.1.3:8085/Graduation_Project/";
     private final String serverPageUrl = serverIP + "getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
     private static final int signInRequstCode = 50;
+
+    String sUserName, sPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,60 @@ public class LoginActivity extends AppCompatActivity {
         pass = findViewById(R.id.login_pass);
         login = findViewById(R.id.login_btn);
         gMailLogin = findViewById(R.id.gmail_login);
+        keepLogin = findViewById(R.id.keep_login);
+
+        SharedPreferences checkSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        serverResponse = response -> {
+            if (!response.equals("null")) {
+                Log.i("Server Response", response);
+                setWeekAndDay();
+                Intent intent = new Intent(this, MainActivity.class);
+                User user = new User();
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    user.setName(jsonObject.getString("user_name"));
+                    user.setAge(jsonObject.getString("age"));
+                    user.setEmail(jsonObject.getString("email"));
+                    user.setMobile(jsonObject.getString("mobile"));
+                    user.setPass(jsonObject.getString("pass"));
+                    user.setCountry(jsonObject.getString("country"));
+                    user.setCity(jsonObject.getString("city"));
+                    user.setImage(jsonObject.getString("image"));
+                    user.setId(Integer.parseInt(jsonObject.getString("user_id")));
+                    user.setChildDateOfBirth(jsonObject.getString("child_date_of_pregnancy"));
+                    user.setCurrWeight(jsonObject.getString("wight"));
+                    intent.putExtra("user_data", user);
+                    startActivity(intent);
+                    finish();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Toast.makeText(this, "Wrong User Name Or Password", Toast.LENGTH_SHORT).show();
+            }
+            requestQueue.stop();
+        };
+
+        errorListener = error -> {
+            error.printStackTrace();
+            requestQueue.stop();
+        };
+
+        loginData = new StringRequest(Request.Method.POST, serverPageUrl, serverResponse, errorListener) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> data = new HashMap<>();
+                data.put("user_name", checkSharedPreferences.getString("curr_user_name_k", ""));
+                data.put("pass", checkSharedPreferences.getString("curr_user_pass_k", ""));
+                return data;
+            }
+        };
+
+        boolean keepMeLogin = checkSharedPreferences.getBoolean("keep_login", false);
+        if (keepMeLogin) {
+            requestQueue = Volley.newRequestQueue(this);
+            requestQueue.add(loginData);
+        }
 
         login.setOnClickListener(view -> {
             String sUserName = userName.getText().toString(), sPass = pass.getText().toString();
@@ -78,8 +136,18 @@ public class LoginActivity extends AppCompatActivity {
                             user.setImage(jsonObject.getString("image"));
                             user.setId(Integer.parseInt(jsonObject.getString("user_id")));
                             user.setChildDateOfBirth(jsonObject.getString("child_date_of_pregnancy"));
+                            user.setCurrWeight(jsonObject.getString("wight"));
                             intent.putExtra("user_data", user);
+                            if (keepLogin.isChecked()) {
+                                SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                                SharedPreferences.Editor editor = mySharedPreferences.edit();
+                                editor.putBoolean("keep_login", true);
+                                editor.putString("curr_user_name_k",sUserName);
+                                editor.putString("curr_user_pass_k",sPass);
+                                editor.apply();
+                            }
                             startActivity(intent);
+                            finish();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -89,20 +157,16 @@ public class LoginActivity extends AppCompatActivity {
                     requestQueue.stop();
                 };
 
-                errorListener = error -> {
-                    error.printStackTrace();
-                    requestQueue.stop();
-                };
-
                 loginData = new StringRequest(Request.Method.POST, serverPageUrl, serverResponse, errorListener) {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> data = new HashMap<>();
-                        data.put("user_name", sUserName);
+                        data.put("user_name",sUserName);
                         data.put("pass", sPass);
                         return data;
                     }
                 };
+
 
                 requestQueue = Volley.newRequestQueue(this);
                 requestQueue.add(loginData);
@@ -150,6 +214,8 @@ public class LoginActivity extends AppCompatActivity {
         if (!sharedPreferences.contains("last_visited_week")) {
             editor.putInt("last_visited_week", 0);
             editor.putInt("last_visited_dash", 0);
+            editor.putInt("last_visited_question", 0);
+            editor.putInt("last_visited_daily_question", 0);
         }
         editor.apply();
     }

@@ -197,22 +197,37 @@
 
         </RelativeLayout>
 
-        <include layout="@layout/item_divider" />
 
-        <Button
-            android:id="@+id/edit_profile"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/btnstyle3"
-            android:text="@string/editprofile"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="normal|bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/edit_profile"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/btnstyle3"
+                android:text="@string/editprofile"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:id="@+id/log_out"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/btnstyle3"
+                android:text="@string/log_out"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="47dp" />
 
     </LinearLayout>
 

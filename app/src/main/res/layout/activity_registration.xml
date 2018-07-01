@@ -48,8 +48,9 @@
             android:hint="@string/Username"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/email"
@@ -63,10 +64,11 @@
             android:drawablePadding="12dp"
             android:fontFamily="@font/electrolize"
             android:hint="@string/email"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/birth"
@@ -83,8 +85,9 @@
             android:hint="@string/age"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/mobile"
@@ -101,8 +104,9 @@
             android:hint="@string/mobile"
             android:inputType="numberDecimal"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/pass"
@@ -119,8 +123,9 @@
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/confirmPass"
@@ -137,8 +142,9 @@
             android:hint="@string/confirmPass"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
@@ -199,15 +205,9 @@
             android:fontFamily="@font/electrolize"
             android:hint="@string/city"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:background="@color/white" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/weightuser"
@@ -224,8 +224,9 @@
             android:hint="Weight"
             android:inputType="numberDecimal"
             android:maxLines="1"
-            android:textColor="@color/white"
-            android:textColorHint="#ffffff" />
+            android:textColor="@color/black"
+            android:textColorHint="#ffffff"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -252,7 +253,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/electrolize"
                 android:text="@string/date"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <ImageView

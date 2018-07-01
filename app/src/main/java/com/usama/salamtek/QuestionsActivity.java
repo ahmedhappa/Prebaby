@@ -398,8 +398,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
 
                         serverResponse = response -> {
-                            Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
-                            if (!response.equals("null")){
+                            if (!response.equals("null")) {
                                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putInt("last_visited_question", (int) intent.getLongExtra("week_num", 0));
@@ -408,6 +407,13 @@ public class QuestionsActivity extends AppCompatActivity {
                                 if (notificationManager != null) {
                                     notificationManager.cancelAll();
                                 }
+                                Toast.makeText(this, "All questions Answered successfully . Thanks", Toast.LENGTH_SHORT).show();
+                                Intent intent1 = new Intent(this, MainActivity.class);
+                                intent1.putExtra("user_data", user);
+                                startActivity(intent1);
+                                finish();
+                            }else{
+                                Toast.makeText(this, "Something went wrong please try again later", Toast.LENGTH_SHORT).show();
                             }
                             requestQueue.stop();
                         };

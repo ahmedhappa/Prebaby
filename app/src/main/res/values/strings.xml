@@ -135,7 +135,7 @@
     <string name="how_much_water_do_you_drink">How much water do you drink ?</string>
     <string name="how_much_do_you_sleep">How much do you sleep ?</string>
     <string name="do_you_eat_today">Do you eat today?</string>
-    <string name="do_you_eat_meals">Do you 3 or 4 meals today ?</string>
+    <string name="do_you_eat_meals">Do you ate 3 or 4 meals today ?</string>
     <string name="do_you_take_vitamins">Do you take your daily vitamins?</string>
     <string name="keep_sign_in">Keep Sign in</string>
     <string name="profile_pic">Upload Profile Picture</string>
@@ -147,6 +147,8 @@
     <string name="result">Result</string>
     <string name="what_weight">What\'s your weight ?</string>
     <string name="daily_questions">Daily Questions</string>
+    <string name="log_out">Log out</string>
+    <string name="my_weekly_reports">My Weekly Reports</string>
 
     <string-array name="countries_array">
         <item>Afghanistan</item>

@@ -65,15 +65,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/SignupNow"
+            android:textStyle="bold"
             android:fontFamily="@font/electrolize"
             android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <View
-            android:layout_width="85dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/white" />
+            android:textSize="23sp" />
     </LinearLayout>
 
 

@@ -68,18 +68,12 @@ public class ChartActionVE extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart_action_ve);
-        Toolbar myToolbar = findViewById(R.id.chart_toolbar_ve);
-        setSupportActionBar(myToolbar);
-
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("pregnancyCurrWeek")) {
             int weekNumber = (int) intent.getLongExtra("pregnancyCurrWeek", 0);
             user = intent.getParcelableExtra("user_data");
             type = intent.getStringExtra("type");
             weeks = new ArrayList<>();
-            for (int i = 1; i <= weekNumber; i++) {
-                weeks.add("week" + i);
-            }
             weekValue = new ArrayList<>();
 
             serverResponse = response -> {
@@ -87,6 +81,11 @@ public class ChartActionVE extends AppCompatActivity {
                 try {
                     allWeeks = new HashMap<>();
                     JSONArray jsonArray = new JSONArray(response);
+                    for (int i = 0; i <= jsonArray.length(); i=i+4) {
+                        weeks.add("week" + jsonArray.getJSONObject(i).getString("weekNumber"));
+                    }
+                    Toolbar myToolbar = findViewById(R.id.chart_toolbar_ve);
+                    setSupportActionBar(myToolbar);
                     JSONObject jsonObject = jsonArray.getJSONObject(jsonArray.length() - 1);
                     JSONArray daysData = jsonObject.getJSONArray(weeks.get(weeks.size() - 1));
                     for (int i = 0; i < daysData.length(); i++) {

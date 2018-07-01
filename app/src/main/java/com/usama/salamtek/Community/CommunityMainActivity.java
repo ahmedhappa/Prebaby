@@ -2,6 +2,7 @@ package com.usama.salamtek.Community;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,6 +37,7 @@ public class CommunityMainActivity extends AppCompatActivity implements ClickPos
     FloatingActionButton createPost;
     User user;
     RecyclerView recyclerView;
+    SwipeRefreshLayout swipeContainer;
 
     Response.Listener<String> sererResponse;
     Response.ErrorListener errorListener;
@@ -58,6 +60,24 @@ public class CommunityMainActivity extends AppCompatActivity implements ClickPos
         setContentView(R.layout.activity_community_main);
         createPost = findViewById(R.id.addNewPostFab);
         recyclerView = findViewById(R.id.recycler_view);
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                onStart();
+                swipeContainer.setRefreshing(false);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        posts.clear();
+        users.clear();
+        likedPost.clear();
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("user_data")) {
             user = intent.getParcelableExtra("user_data");
@@ -65,6 +85,7 @@ public class CommunityMainActivity extends AppCompatActivity implements ClickPos
                 Intent intent1 = new Intent(this, CreatePostActivity.class);
                 intent1.putExtra("user_data", user);
                 startActivity(intent1);
+                finish();
             });
 
             sererResponse = response -> {
@@ -119,7 +140,6 @@ public class CommunityMainActivity extends AppCompatActivity implements ClickPos
             requestQueue.add(getPosts);
 
         }
-
     }
 
     @Override
@@ -137,7 +157,6 @@ public class CommunityMainActivity extends AppCompatActivity implements ClickPos
     @Override
     public void onClickLike(int postId, int i) {
         sererResponseFromLike = response -> {
-            Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
         };
 
         makeALike = new StringRequest(Request.Method.POST, likePageUrl, sererResponseFromLike, errorListener) {

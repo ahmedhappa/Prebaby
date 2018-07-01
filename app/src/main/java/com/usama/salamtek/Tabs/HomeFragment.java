@@ -1,8 +1,10 @@
 package com.usama.salamtek.Tabs;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -62,7 +64,7 @@ import java.util.Map;
 public class HomeFragment extends Fragment {
     ImageView reminder;
     User user;
-    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dailyquestionNotifi_num;
+    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dailyquestionNotifi_num, art1, art2,weekly_reports;
     private Response.Listener<String> serverResponse;
     private Response.ErrorListener errorListener;
     private StringRequest getBabyInfo;
@@ -71,6 +73,8 @@ public class HomeFragment extends Fragment {
     ChangeMainTabListener changeMainTabListener;
     long elapsedWeeks, elapsedDays;
     ImageView communityIcon;
+
+    ProgressDialog progressDialog;
 
     private final String serverPageUrl = LoginActivity.serverIP + "babyInfo.php";
 
@@ -93,7 +97,13 @@ public class HomeFragment extends Fragment {
         communityIcon = view.findViewById(R.id.communityIcon);
         my_dailyqus_notifi = view.findViewById(R.id.my_dailyqus_notifi);
         dailyquestionNotifi_num = view.findViewById(R.id.dailyquestionNotifi_num);
+        art1 = view.findViewById(R.id.art1);
+        art2 = view.findViewById(R.id.art2);
+        weekly_reports = view.findViewById(R.id.weekly_reports);
 
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Loading ... ");
+        progressDialog.show();
 
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
         AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.app_bar);
@@ -117,8 +127,20 @@ public class HomeFragment extends Fragment {
         });
 
         reminder.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getActivity(), ReminderMainActivity.class);
-            startActivity(intent);
+            Intent intent3 = new Intent(getActivity(), ReminderMainActivity.class);
+            startActivity(intent3);
+        });
+
+        art1.setOnClickListener(v -> {
+            Intent intent4 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://192.168.1.3:8085/first"));
+            startActivity(intent4);
+
+        });
+
+        art2.setOnClickListener(v -> {
+            Intent intent5 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://192.168.1.3:8085/second"));
+            startActivity(intent5);
+
         });
 
         if (getActivity().getIntent() != null) {
@@ -153,7 +175,8 @@ public class HomeFragment extends Fragment {
                     Date childPregnancyDateAfterNineMonthes = calendar.getTime();
                     long difference = childPregnancyDateAfterNineMonthes.getTime() - currentDate.getTime();
                     long elapsedRemainingPregnancyDays = difference / daysInMilli;
-                    daysCount.setText(String.valueOf(elapsedRemainingPregnancyDays));
+                    String expcetedDays = "Expected Remaining days : " + String.valueOf(elapsedRemainingPregnancyDays);
+                    daysCount.setText(expcetedDays);
                     String curWeekNumber = "Week Number : " + String.valueOf(elapsedWeeks);
                     weekNum.setText(curWeekNumber);
 
@@ -172,25 +195,35 @@ public class HomeFragment extends Fragment {
                     qusNotiNum.setText(String.valueOf(unAnsweredQuestiuns));
                     dailyquestionNotifi_num.setText(String.valueOf(unAnsweredDailyQuestiuns));
 
+//                    if (!sharedPreferences.contains("is_job_running")) {
+//                        SharedPreferences.Editor notiEditor1 = sharedPreferences.edit();
+//                        notiEditor1.putBoolean("is_job_running", true);
+//                        notiEditor1.apply();
+//                        int numberOfSecounds = 7 * 24 * 60 * 60;
+//                        String jobTag = "notification_job";
+//                        Driver driver = new GooglePlayDriver(getActivity());
+//                        FirebaseJobDispatcher jobDispatcher = new FirebaseJobDispatcher(driver);
+//                        Job job = jobDispatcher.newJobBuilder()
+//                                .setService(MyJobServiceNotification.class)
+//                                .setTag(jobTag)
+//                                .setLifetime(Lifetime.FOREVER)
+//                                .setRecurring(true)
+//                                .setTrigger(Trigger.executionWindow(numberOfSecounds, numberOfSecounds + 10))
+//                                .setReplaceCurrent(true)
+//                                .build();
 
-                    if (!sharedPreferences.contains("is_job_running")) {
-                        SharedPreferences.Editor notiEditor1 = sharedPreferences.edit();
-                        notiEditor1.putBoolean("is_job_running", true);
-                        notiEditor1.apply();
-                        int numberOfSecounds = 7 * 24 * 60 * 60;
-                        String jobTag = "notification_job";
-                        Driver driver = new GooglePlayDriver(getActivity());
-                        FirebaseJobDispatcher jobDispatcher = new FirebaseJobDispatcher(driver);
-                        Job job = jobDispatcher.newJobBuilder()
-                                .setService(MyJobServiceNotification.class)
-                                .setTag(jobTag)
-                                .setLifetime(Lifetime.FOREVER)
-                                .setRecurring(true)
-                                .setTrigger(Trigger.executionWindow(numberOfSecounds, numberOfSecounds + 10))
-                                .setReplaceCurrent(true)
-                                .build();
-                        jobDispatcher.schedule(job);
-                    }
+//                        int numberOfDailySecounds = 24 * 60 * 60;
+//                        Job jobDailyQus = jobDispatcher.newJobBuilder()
+//                                .setService(MyJobServiceNotification.class)
+//                                .setTag(jobTag)
+//                                .setLifetime(Lifetime.FOREVER)
+//                                .setRecurring(true)
+//                                .setTrigger(Trigger.executionWindow(numberOfDailySecounds, numberOfDailySecounds + 10))
+//                                .setReplaceCurrent(true)
+//                                .build();
+//                        jobDispatcher.schedule(jobDailyQus);
+//                    }
+
 
                     weekNoti.setOnClickListener(view1 -> {
                         changeMainTabListener.onClick(1);
@@ -200,7 +233,6 @@ public class HomeFragment extends Fragment {
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.tabFrame, new MyweekFragment());
                         fragmentTransaction.commit();
-
                     });
                     dashNoti.setOnClickListener(view1 -> {
                         changeMainTabListener.onClick(2);
@@ -215,7 +247,6 @@ public class HomeFragment extends Fragment {
                     qusNoti.setOnClickListener(view1 -> {
                         if (unAnsweredQuestiuns != 0) {
                             Intent qustionIntent = new Intent(getActivity(), QuestionsActivity.class);
-                            user.setCurrWeight(80 + "");
                             qustionIntent.putExtra("user_data", user);
                             qustionIntent.putExtra("week_num", elapsedWeeks);
                             qustionIntent.putExtra("pregnancyMonth", (int) (elapsedDays / 30) + 1);
@@ -238,15 +269,26 @@ public class HomeFragment extends Fragment {
                         }
                     });
 
+                    weekly_reports.setOnClickListener(v -> {
+                        Intent qustionIntent = new Intent(getActivity(), QuestionsActivity.class);
+                        qustionIntent.putExtra("user_data", user);
+                        qustionIntent.putExtra("week_num", elapsedWeeks);
+                        qustionIntent.putExtra("pregnancyMonth", (int) (elapsedDays / 30) + 1);
+                        startActivity(qustionIntent);
+                    });
+
 
                     serverResponse = response -> {
                         Log.i("server response", response);
+                        progressDialog.dismiss();
                         if (!response.equals("null")) {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 JSONObject weekData = jsonObject.getJSONObject("week_data");
-                                babySize.setText(weekData.getString("baby_size"));
-                                babyHeight.setText(weekData.getString("baby_height"));
+                                String bwigth = "Baby Weight : " + weekData.getString("baby_size");
+                                String blenth = "Baby Length : " + weekData.getString("baby_height");
+                                babySize.setText(bwigth);
+                                babyHeight.setText(blenth);
                                 JSONObject dayData = jsonObject.getJSONObject("day_data");
                                 dayTip1.setText(dayData.getString("tip_e1"));
                             } catch (JSONException e) {

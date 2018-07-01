@@ -29,9 +29,13 @@ import com.usama.salamtek.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class PostDetailes extends AppCompatActivity {
@@ -93,7 +97,6 @@ public class PostDetailes extends AppCompatActivity {
             likePic.setOnClickListener(view -> {
                 if (!likedPost) {
                     sererResponseFromLike = response -> {
-                        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
                     };
 
                     makeALike = new StringRequest(Request.Method.POST, likePageUrl, sererResponseFromLike, errorListener) {
@@ -106,11 +109,11 @@ public class PostDetailes extends AppCompatActivity {
                             return data;
                         }
                     };
+                    post.setNumberOfLikes(String.valueOf(Integer.parseInt(post.getNumberOfLikes()) + 1));
                     requestQueue.add(makeALike);
                     likedPost = true;
                     likePic.setBackgroundResource(0);
                     likePic.setBackgroundResource(R.drawable.like_red);
-                    post.setNumberOfLikes(String.valueOf(Integer.parseInt(post.getNumberOfLikes()) + 1));
                     likes.setText(post.getNumberOfLikes());
                 } else {
                     Toast.makeText(this, "You Liked this post already", Toast.LENGTH_SHORT).show();
@@ -170,6 +173,27 @@ public class PostDetailes extends AppCompatActivity {
 
             sendCommentServerResponse = response -> {
                 Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+                comments.setText(post.getNumberOfComments());
+                Comment comment = new Comment();
+                User user1 = new User();
+                user1.setName(user.getName());
+                user1.setImage(user.getImage());
+                comment.setCommentContent(commentContent);
+                Date date = Calendar.getInstance().getTime();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.UK);
+                comment.setDate(simpleDateFormat.format(date));
+                if (postComments.size() == 0) {
+                    postComments.add(comment);
+                    commentUsers.add(user1);
+                    CommentsAdabter commentsAdabter = new CommentsAdabter(postComments, commentUsers, this);
+                    commentsRecycler.setLayoutManager(new LinearLayoutManager(this));
+                    commentsRecycler.setAdapter(commentsAdabter);
+                } else {
+                    postComments.add(comment);
+                    commentUsers.add(user1);
+                    commentsRecycler.getAdapter().notifyDataSetChanged();
+                }
+
             };
 
 
@@ -188,6 +212,7 @@ public class PostDetailes extends AppCompatActivity {
             createComment.setOnClickListener(view -> {
                 commentContent = comment.getText().toString();
                 if (!commentContent.equals("")) {
+                    post.setNumberOfComments(String.valueOf(Integer.valueOf(post.getNumberOfComments()) + 1));
                     requestQueue.add(sendComment);
                 } else {
                     Toast.makeText(this, "Please write a comment", Toast.LENGTH_SHORT).show();

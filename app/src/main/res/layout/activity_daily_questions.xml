@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,259 +8,267 @@
     android:orientation="vertical"
     tools:context="com.usama.salamtek.DailyQuestionsActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/softblue"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/white" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
-        android:clickable="true"
-        android:padding="@dimen/activity_horizontal_margin">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/softblue"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white" />
 
-        <ImageView
-            android:id="@+id/dailyQ1img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:src="@drawable/question2" />
-
-        <TextView
-            android:id="@+id/Dailyques1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/dailyQ1img"
-            android:layout_toRightOf="@id/dailyQ1img"
-            android:text="@string/how_much_water_do_you_drink"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/daily_water"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Dailyques1"
-            android:layout_marginLeft="8dp"
-            android:layout_toEndOf="@id/dailyQ1img"
-            android:layout_toRightOf="@id/dailyQ1img"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/white" />
-
-    </RelativeLayout>
-
-    <include layout="@layout/item_dividerw" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
-        android:clickable="true"
-        android:padding="@dimen/activity_horizontal_margin">
-
-        <ImageView
-            android:id="@+id/dailyQ2img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:src="@drawable/question2" />
-
-        <TextView
-            android:id="@+id/Dailyques2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/dailyQ2img"
-            android:layout_toRightOf="@id/dailyQ2img"
-            android:text="@string/how_much_do_you_sleep"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/daily_sleep"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Dailyques2"
-            android:layout_marginLeft="8dp"
-            android:layout_toEndOf="@id/dailyQ2img"
-            android:layout_toRightOf="@id/dailyQ2img"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/white" />
-
-    </RelativeLayout>
-
-    <include layout="@layout/item_dividerw" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
-        android:clickable="true"
-        android:padding="@dimen/activity_horizontal_margin">
-
-        <ImageView
-            android:id="@+id/dailyQ3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:src="@drawable/question2" />
-
-        <TextView
-            android:id="@+id/Dailyques3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/dailyQ3"
-            android:layout_toRightOf="@id/dailyQ3"
-            android:text="@string/do_you_eat_meals"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Dailyques3"
-            android:layout_toEndOf="@id/dailyQ3"
-            android:layout_toRightOf="@id/dailyQ3"
-            android:orientation="horizontal">
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/daily_food"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/dailyQ1img"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/question2" />
 
-                <RadioButton
-                    android:id="@+id/radio_yesQ3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
-                    android:buttonTint="@color/white"
-                    android:text="@string/yes"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+            <TextView
+                android:id="@+id/Dailyques1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dailyQ1img"
+                android:layout_toRightOf="@id/dailyQ1img"
+                android:text="@string/how_much_water_do_you_drink"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-                <RadioButton
-                    android:id="@+id/radio_noQ3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:buttonTint="@color/white"
-                    android:text="@string/no"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+            <EditText
+                android:id="@+id/daily_water"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Dailyques1"
+                android:layout_marginLeft="8dp"
+                android:layout_toEndOf="@id/dailyQ1img"
+                android:layout_toRightOf="@id/dailyQ1img"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white" />
 
-            </RadioGroup>
-        </LinearLayout>
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <include layout="@layout/item_dividerw" />
+        <include layout="@layout/item_dividerw" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
-        android:clickable="true"
-        android:padding="@dimen/activity_horizontal_margin">
-
-        <ImageView
-            android:id="@+id/dailyQ4img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:src="@drawable/question2" />
-
-        <TextView
-            android:id="@+id/Dailyques4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/dailyQ4img"
-            android:layout_toRightOf="@id/dailyQ4img"
-            android:text="@string/do_you_take_vitamins"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Dailyques4"
-            android:layout_toEndOf="@id/dailyQ4img"
-            android:layout_toRightOf="@id/dailyQ4img"
-            android:orientation="horizontal">
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/daily_vitamins"
+            <ImageView
+                android:id="@+id/dailyQ2img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/question2" />
+
+            <TextView
+                android:id="@+id/Dailyques2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dailyQ2img"
+                android:layout_toRightOf="@id/dailyQ2img"
+                android:text="@string/how_much_do_you_sleep"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/daily_sleep"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Dailyques2"
+                android:layout_marginLeft="8dp"
+                android:layout_toEndOf="@id/dailyQ2img"
+                android:layout_toRightOf="@id/dailyQ2img"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/item_dividerw" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/dailyQ3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/question2" />
+
+            <TextView
+                android:id="@+id/Dailyques3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dailyQ3"
+                android:layout_toRightOf="@id/dailyQ3"
+                android:text="@string/do_you_eat_meals"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_below="@+id/Dailyques3"
+                android:layout_toEndOf="@id/dailyQ3"
+                android:layout_toRightOf="@id/dailyQ3"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radio_yesQ4"
-                    android:layout_width="wrap_content"
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/daily_food"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
-                    android:buttonTint="@color/white"
-                    android:text="@string/yes"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radio_noQ4"
-                    android:layout_width="wrap_content"
+                    <RadioButton
+                        android:id="@+id/radio_yesQ3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:buttonTint="@color/white"
+                        android:text="@string/yes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_noQ3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:buttonTint="@color/white"
+                        android:text="@string/no"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/item_dividerw" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/dailyQ4img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/question2" />
+
+            <TextView
+                android:id="@+id/Dailyques4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dailyQ4img"
+                android:layout_toRightOf="@id/dailyQ4img"
+                android:text="@string/do_you_take_vitamins"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Dailyques4"
+                android:layout_toEndOf="@id/dailyQ4img"
+                android:layout_toRightOf="@id/dailyQ4img"
+                android:orientation="horizontal">
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/daily_vitamins"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:buttonTint="@color/white"
-                    android:text="@string/no"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-            </RadioGroup>
-        </LinearLayout>
-    </RelativeLayout>
+                    <RadioButton
+                        android:id="@+id/radio_yesQ4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:buttonTint="@color/white"
+                        android:text="@string/yes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
 
-    <include layout="@layout/item_dividerw" />
+                    <RadioButton
+                        android:id="@+id/radio_noQ4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:buttonTint="@color/white"
+                        android:text="@string/no"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/daily_qus_apply_btn"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:background="@drawable/btnstyle"
-        android:fontFamily="@font/electrolize"
-        android:padding="16dp"
-        android:text="@string/apply"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:textStyle="normal|bold" />
+                </RadioGroup>
+            </LinearLayout>
+        </RelativeLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
-</LinearLayout>
+
+        <Button
+            android:id="@+id/daily_qus_apply_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btnstyle"
+            android:fontFamily="@font/electrolize"
+            android:padding="16dp"
+            android:text="@string/apply"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>

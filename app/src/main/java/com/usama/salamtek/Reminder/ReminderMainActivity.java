@@ -46,9 +46,4 @@ public class ReminderMainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(ReminderMainActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
 }

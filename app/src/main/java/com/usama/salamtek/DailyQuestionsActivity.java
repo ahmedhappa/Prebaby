@@ -60,12 +60,20 @@ public class DailyQuestionsActivity extends AppCompatActivity {
 
             if (!waterV.equals("") && !sleepV.equals("")) {
                 serverResponse = response -> {
-                    Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
                     if (response.equals("done")) {
                         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putInt("last_visited_daily_question", (int) intent.getLongExtra("day_num", 0));
                         editor.apply();
+                        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                        if (notificationManager != null) {
+                            notificationManager.cancelAll();
+                        }
+                        Toast.makeText(this, "You answered all questions thanks for your time", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(this, MainActivity.class);
+                        intent1.putExtra("user_data", user);
+                        startActivity(intent1);
+                        finish();
                     }
                     requestQueue.stop();
                 };
@@ -84,7 +92,7 @@ public class DailyQuestionsActivity extends AppCompatActivity {
                         data.put("food", foodVD);
                         data.put("vitamins", vitaminsVD);
                         data.put("userId", String.valueOf(user.getId()));
-                        data.put("dayNum", "day" + (intent.getLongExtra("day_num", 0) - ((intent.getLongExtra("week_num", 0)-1) * 7)));
+                        data.put("dayNum", "day" + (intent.getLongExtra("day_num", 0) - ((intent.getLongExtra("week_num", 0) - 1) * 7)));
                         data.put("weekNum", String.valueOf((intent.getLongExtra("week_num", 0))));
                         return data;
                     }

@@ -59,6 +59,10 @@ public class CreatePostActivity extends AppCompatActivity {
             sererResponse = response -> {
                 if (response.equals("done")) {
                     Toast.makeText(this, "Post Added Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent1 = new Intent(this, CommunityMainActivity.class);
+                    intent1.putExtra("user_data", user);
+                    startActivity(intent1);
+                    finish();
                 } else {
                     Toast.makeText(this, "There is an error please try again later", Toast.LENGTH_SHORT).show();
                 }

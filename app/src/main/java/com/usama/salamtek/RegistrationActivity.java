@@ -98,8 +98,11 @@ public class RegistrationActivity extends AppCompatActivity {
             if (!(sMail.equals("") && sUserName.equals("") && sPass.equals("") && sConfirmPass.equals(""))) {
                 if ((sPass.equals(sConfirmPass))) {
                     serverResponse = response -> {
-                        Log.i("server response", response);
-                        Toast.makeText(this, "You Signed up Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+
                         requestQueue.stop();
                     };
 
@@ -120,7 +123,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             data.put("country", sCountry);
                             data.put("city", sCity);
                             data.put("child_date_of_pregnancy", sDate);
-                            data.put("weight",sWeight);
+                            data.put("weight", sWeight);
                             if (!imgAsString.equals("")) {
                                 data.put("image", imgAsString);
                             }
