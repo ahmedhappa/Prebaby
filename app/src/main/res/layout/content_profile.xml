@@ -201,10 +201,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/edit_profile"
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="50dp"
                 android:background="@drawable/btnstyle3"
                 android:text="@string/editprofile"
@@ -214,7 +216,7 @@
 
             <Button
                 android:id="@+id/log_out"
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
@@ -227,7 +229,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="47dp" />
+            android:layout_height="40dp" />
 
     </LinearLayout>
 

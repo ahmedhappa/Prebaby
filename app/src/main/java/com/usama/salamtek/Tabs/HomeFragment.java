@@ -175,7 +175,7 @@ public class HomeFragment extends Fragment {
                     Date childPregnancyDateAfterNineMonthes = calendar.getTime();
                     long difference = childPregnancyDateAfterNineMonthes.getTime() - currentDate.getTime();
                     long elapsedRemainingPregnancyDays = difference / daysInMilli;
-                    String expcetedDays = "Expected Remaining days : " + String.valueOf(elapsedRemainingPregnancyDays);
+                    String expcetedDays = "Remaining days : " + String.valueOf(elapsedRemainingPregnancyDays);
                     daysCount.setText(expcetedDays);
                     String curWeekNumber = "Week Number : " + String.valueOf(elapsedWeeks);
                     weekNum.setText(curWeekNumber);
@@ -285,8 +285,8 @@ public class HomeFragment extends Fragment {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 JSONObject weekData = jsonObject.getJSONObject("week_data");
-                                String bwigth = "Baby Weight : " + weekData.getString("baby_size");
-                                String blenth = "Baby Length : " + weekData.getString("baby_height");
+                                String bwigth = "Baby Weight :" + weekData.getString("baby_size");
+                                String blenth = "Baby Length :" + weekData.getString("baby_height");
                                 babySize.setText(bwigth);
                                 babyHeight.setText(blenth);
                                 JSONObject dayData = jsonObject.getJSONObject("day_data");

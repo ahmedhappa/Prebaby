@@ -28,11 +28,31 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/bWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@string/paragraph"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/bHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="@string/paragraph"
+                android:textColor="@color/black"
+                android:textSize="16sp" />☺
+
+            <TextView
                 android:id="@+id/babyParagraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:text="@string/paragraph"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -42,10 +62,10 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
             android:background="@color/softblue" />
 
         <LinearLayout
@@ -69,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:text="@string/paragraph"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -78,10 +98,10 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
             android:background="@color/softblue" />
 
         <LinearLayout
@@ -105,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:text="@string/paragraph"
                 android:textColor="@color/black"
                 android:textSize="16sp" />

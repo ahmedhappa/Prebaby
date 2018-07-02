@@ -40,58 +40,55 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/weeknum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:text="@string/weeknumber"
-                        android:textSize="20sp" />
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/countDay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/count"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/babySize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/baby_size"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/baby_height"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/baby_height"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/weekly_reports"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/my_weekly_reports"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
 

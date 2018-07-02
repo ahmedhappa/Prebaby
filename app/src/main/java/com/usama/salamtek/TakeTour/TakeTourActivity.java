@@ -16,7 +16,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class TakeTourActivity extends AppCompatActivity {
     private static ViewPager mPager;
     private static int currentPage = 0;
-    private static final Integer[] XMEN = {R.drawable.loginregistration, R.drawable.logindesign, R.drawable.finalfirstdesign, R.drawable.firstactivitydesign};
+    private static final Integer[] XMEN = {R.drawable.home1, R.drawable.home2, R.drawable.myweek1, R.drawable.myweek2, R.drawable.dashboard};
     private ArrayList<Integer> XMENArray = new ArrayList<Integer>();
 
     @Override

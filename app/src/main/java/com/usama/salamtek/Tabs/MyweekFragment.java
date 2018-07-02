@@ -44,7 +44,7 @@ import java.util.Map;
  * A simple {@link Fragment} subclass.
  */
 public class MyweekFragment extends Fragment {
-    TextView baby, momToBe, tipForWeek;
+    TextView baby, momToBe, tipForWeek, bWeight, bHeight;
     Response.Listener<String> serverResponse;
     Response.ErrorListener errorListener;
     StringRequest getTipsData;
@@ -63,6 +63,8 @@ public class MyweekFragment extends Fragment {
         momToBe = view.findViewById(R.id.MomParagraph);
         tipForWeek = view.findViewById(R.id.tipParagraph);
         weekImage = view.findViewById(R.id.myweek_pic);
+        bWeight = view.findViewById(R.id.bWeight);
+        bHeight = view.findViewById(R.id.bHeight);
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading ... ");
@@ -105,6 +107,8 @@ public class MyweekFragment extends Fragment {
                             byte[] arr = Base64.decode(jsonObject.getString("week_image"), Base64.DEFAULT);
                             Bitmap img = BitmapFactory.decodeByteArray(arr, 0, arr.length);
                             weekImage.setImageBitmap(img);
+                            bHeight.setText("Baby Height: "+jsonObject.getString("baby_length"));
+                            bWeight.setText("Baby Weight: "+jsonObject.getString("baby_weight"));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

@@ -128,8 +128,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/commentsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/my_scroll" />
+        android:layout_height="160dp"
+        android:layout_below="@+id/my_scroll"
+        android:scrollbars="vertical" />
 
 
     <LinearLayout
@@ -137,9 +138,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:elevation="4dp"
         android:background="@color/activity_background"
-        android:orientation="horizontal">
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
 
         <EditText
             android:id="@+id/write_comment"

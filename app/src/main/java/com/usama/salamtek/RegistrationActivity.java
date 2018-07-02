@@ -80,8 +80,7 @@ public class RegistrationActivity extends AppCompatActivity {
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month + 1, day);
-        System.out.println(dateShow.getText().toString());
-        country_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*country_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 ((TextView) parentView.getChildAt(0)).setTextColor(Color.WHITE);
@@ -90,7 +89,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
-        });
+        });*/
 
         regBtn.setOnClickListener(view -> {
             String sMail = eMail.getText().toString(), sUserName = userName.getText().toString(), sAge = age.getText().toString(), sMobile = mobile.getText().toString(), sPass = pass.getText().toString(), sConfirmPass = confirmPass.getText().toString(), sCountry = country_spinner.getSelectedItem().toString(), sCity = city.getText().toString(), sDate = dateShow.getText().toString(), sWeight = weightUser.getText().toString();

@@ -44,8 +44,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name="com.usama.salamtek.FirstActivity" >
-        </activity>
+        <activity android:name="com.usama.salamtek.FirstActivity" />
         <activity android:name="com.usama.salamtek.LoginActivity" />
         <activity android:name="com.usama.salamtek.RegistrationActivity" />
         <activity android:name="com.usama.salamtek.Tabs.TabsActivity" />
@@ -89,7 +88,6 @@
             android:writePermission="com.usama.salamtek.WRITE" />
 
         <activity android:name="com.usama.salamtek.QuestionsActivity" />
-        <activity android:name="com.usama.salamtek.ForgetPasswordActivity" />
         <activity android:name="com.usama.salamtek.Community.CommunityMainActivity" />
         <activity android:name="com.usama.salamtek.Community.CreatePostActivity" />
         <activity android:name="com.usama.salamtek.Dashboard.ChartAction" />
@@ -105,6 +103,8 @@
                 <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
             </intent-filter>
         </service>
+
+        <activity android:name="com.usama.salamtek.RegistrationPlusActivity" />
         <!--
              Receives GooglePlay execution requests and forwards them to the
              appropriate internal service.

@@ -149,6 +149,7 @@
     <string name="daily_questions">Daily Questions</string>
     <string name="log_out">Log out</string>
     <string name="my_weekly_reports">My Weekly Reports</string>
+    <string name="baby_information">Baby Information</string>
 
     <string-array name="countries_array">
         <item>Afghanistan</item>
