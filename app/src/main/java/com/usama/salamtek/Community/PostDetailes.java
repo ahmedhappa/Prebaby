@@ -177,8 +177,8 @@ public class PostDetailes extends AppCompatActivity {
                 comments.setText(post.getNumberOfComments());
                 Comment comment = new Comment();
                 User user1 = new User();
-                user1.setName(user.getName());
-                user1.setImage(user.getImage());
+                user1.setName(currentUser.getName());
+                user1.setImage(currentUser.getImage());
                 comment.setCommentContent(commentContent);
                 Date date = Calendar.getInstance().getTime();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.UK);

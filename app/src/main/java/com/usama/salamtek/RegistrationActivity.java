@@ -29,8 +29,12 @@ import com.android.volley.toolbox.Volley;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -54,6 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
     final int profileReqCod = 10;
 
     String imgAsString = "";
+    String childDateOfBirth = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,8 +99,17 @@ public class RegistrationActivity extends AppCompatActivity {
         regBtn.setOnClickListener(view -> {
             String sMail = eMail.getText().toString(), sUserName = userName.getText().toString(), sAge = age.getText().toString(), sMobile = mobile.getText().toString(), sPass = pass.getText().toString(), sConfirmPass = confirmPass.getText().toString(), sCountry = country_spinner.getSelectedItem().toString(), sCity = city.getText().toString(), sDate = dateShow.getText().toString(), sWeight = weightUser.getText().toString();
 
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
+            try {
+                Date date = simpleDateFormat.parse(sDate);
+                childDateOfBirth = simpleDateFormat.format(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
             if (!(sMail.equals("") && sUserName.equals("") && sPass.equals("") && sConfirmPass.equals(""))) {
                 if ((sPass.equals(sConfirmPass))) {
+
                     serverResponse = response -> {
                         Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(this, LoginActivity.class);
@@ -121,10 +135,12 @@ public class RegistrationActivity extends AppCompatActivity {
                             data.put("pass", sPass);
                             data.put("country", sCountry);
                             data.put("city", sCity);
-                            data.put("child_date_of_pregnancy", sDate);
+                            data.put("child_date_of_pregnancy", childDateOfBirth);
                             data.put("weight", sWeight);
                             if (!imgAsString.equals("")) {
                                 data.put("image", imgAsString);
+                            } else {
+                                data.put("image", "");
                             }
                             return data;
                         }

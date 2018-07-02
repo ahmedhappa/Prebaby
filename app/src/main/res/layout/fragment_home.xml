@@ -60,25 +60,6 @@
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/babySize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/baby_size"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/baby_height"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/baby_height"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/weekly_reports"

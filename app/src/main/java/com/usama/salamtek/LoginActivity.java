@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageButton gMailLogin;
     CheckBox keepLogin;
 
-    public static final String serverIP = "http://192.168.1.4:8080/Graduation_Project/";
+    public static final String serverIP = "http://192.168.1.3:8085/Graduation_Project/";
     private final String serverPageUrl = serverIP + "getUserData.php";
 
     private GoogleSignInClient mGoogleSignInClient;
@@ -142,8 +142,19 @@ public class LoginActivity extends AppCompatActivity {
                                 SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
                                 SharedPreferences.Editor editor = mySharedPreferences.edit();
                                 editor.putBoolean("keep_login", true);
-                                editor.putString("curr_user_name_k",sUserName);
-                                editor.putString("curr_user_pass_k",sPass);
+                                editor.putString("curr_user_name_k", sUserName);
+                                editor.putString("curr_user_pass_k", sPass);
+                                editor.apply();
+                            }
+                            SharedPreferences sharedPre = PreferenceManager.getDefaultSharedPreferences(this);
+                            int cuurUserUd = sharedPre.getInt("app_curr_user", 0);
+                            if (cuurUserUd != user.getId()) {
+                                SharedPreferences.Editor editor = sharedPre.edit();
+                                editor.putInt("app_curr_user",user.getId());
+                                editor.putInt("last_visited_week", 0);
+                                editor.putInt("last_visited_dash", 0);
+                                editor.putInt("last_visited_question", 0);
+                                editor.putInt("last_visited_daily_question", 0);
                                 editor.apply();
                             }
                             startActivity(intent);
@@ -161,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> data = new HashMap<>();
-                        data.put("user_name",sUserName);
+                        data.put("user_name", sUserName);
                         data.put("pass", sPass);
                         return data;
                     }
@@ -189,6 +200,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -198,8 +210,70 @@ public class LoginActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.i("user email", account.getEmail());
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+
+                serverResponse = response -> {
+                    if (!response.contains("null")) {
+                        Log.i("Server Response", response);
+                        setWeekAndDay();
+                        Intent intent = new Intent(this, MainActivity.class);
+                        User user = new User();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            user.setName(jsonObject.getString("user_name"));
+                            user.setAge(jsonObject.getString("age"));
+                            user.setEmail(jsonObject.getString("email"));
+                            user.setMobile(jsonObject.getString("mobile"));
+                            user.setPass(jsonObject.getString("pass"));
+                            user.setCountry(jsonObject.getString("country"));
+                            user.setCity(jsonObject.getString("city"));
+                            user.setImage(jsonObject.getString("image"));
+                            user.setId(Integer.parseInt(jsonObject.getString("user_id")));
+                            user.setChildDateOfBirth(jsonObject.getString("child_date_of_pregnancy"));
+                            user.setCurrWeight(jsonObject.getString("wight"));
+                            intent.putExtra("user_data", user);
+                            if (keepLogin.isChecked()) {
+                                SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                                SharedPreferences.Editor editor = mySharedPreferences.edit();
+                                editor.putBoolean("keep_login", true);
+                                editor.putString("curr_user_name_k", sUserName);
+                                editor.putString("curr_user_pass_k", sPass);
+                                editor.apply();
+                            }
+                            SharedPreferences sharedPre = PreferenceManager.getDefaultSharedPreferences(this);
+                            int cuurUserUd = sharedPre.getInt("app_curr_user", 0);
+                            if (cuurUserUd != user.getId()) {
+                                SharedPreferences.Editor editor = sharedPre.edit();
+                                editor.putInt("app_curr_user",user.getId());
+                                editor.putInt("last_visited_week", 0);
+                                editor.putInt("last_visited_dash", 0);
+                                editor.putInt("last_visited_question", 0);
+                                editor.putInt("last_visited_daily_question", 0);
+                                editor.apply();
+                            }
+                            startActivity(intent);
+                            finish();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        Intent intent = new Intent(this, RegistrationPlusActivity.class);
+                        intent.putExtra("mail", account.getEmail());
+                        startActivity(intent);
+                    }
+                    requestQueue.stop();
+                };
+
+                final String serverPageUrlOfGmail = serverIP + "loginWithGmail.php";
+                loginData = new StringRequest(Request.Method.POST, serverPageUrlOfGmail, serverResponse, errorListener) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> data = new HashMap<>();
+                        data.put("user_mail", account.getEmail());
+                        return data;
+                    }
+                };
+                requestQueue = Volley.newRequestQueue(this);
+                requestQueue.add(loginData);
             } catch (ApiException e) {
                 // Google Sign In fail
                 Toast.makeText(this, "Something went wrong please try again later", Toast.LENGTH_SHORT).show();

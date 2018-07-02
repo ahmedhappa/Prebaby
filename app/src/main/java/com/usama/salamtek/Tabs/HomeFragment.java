@@ -64,7 +64,7 @@ import java.util.Map;
 public class HomeFragment extends Fragment {
     ImageView reminder;
     User user;
-    TextView daysCount, babySize, babyHeight, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dailyquestionNotifi_num, art1, art2,weekly_reports;
+    TextView daysCount, weekNotiNum, dashNotiNum, qusNotiNum, weekNum, dayTip1, dailyquestionNotifi_num, art1, art2,weekly_reports;
     private Response.Listener<String> serverResponse;
     private Response.ErrorListener errorListener;
     private StringRequest getBabyInfo;
@@ -83,8 +83,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         daysCount = view.findViewById(R.id.countDay);
-        babySize = view.findViewById(R.id.babySize);
-        babyHeight = view.findViewById(R.id.baby_height);
         reminder = view.findViewById(R.id.newReminder);
         weekNoti = view.findViewById(R.id.my_week_notifi);
         dashNoti = view.findViewById(R.id.my_dash_norifi);
@@ -285,10 +283,6 @@ public class HomeFragment extends Fragment {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 JSONObject weekData = jsonObject.getJSONObject("week_data");
-                                String bwigth = "Baby Weight :" + weekData.getString("baby_size");
-                                String blenth = "Baby Length :" + weekData.getString("baby_height");
-                                babySize.setText(bwigth);
-                                babyHeight.setText(blenth);
                                 JSONObject dayData = jsonObject.getJSONObject("day_data");
                                 dayTip1.setText(dayData.getString("tip_e1"));
                             } catch (JSONException e) {
